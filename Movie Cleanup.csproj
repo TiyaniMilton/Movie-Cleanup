@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4E7D8AC-4FAF-4572-9DF4-95BA3DE38433}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Movie_Cleanup</RootNamespace>
+    <AssemblyName>Movie Cleanup</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="SQLite.Designer, Version=1.0.89.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.89.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.89.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="taglib-sharp, Version=2.0.3.7, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WmpFormsLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="WPFSoundVisualizationLib, Version=0.3.4442.43191, Culture=neutral, PublicKeyToken=eb44ed7102b4fcc1, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\MobileDeviceMediaBrowser.xaml.cs">
+      <DependentUpon>MobileDeviceMediaBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SidePanelTab.xaml.cs">
+      <DependentUpon>SidePanelTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VideoControl.xaml.cs">
+      <DependentUpon>VideoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ApplicationInstancemanager.cs" />
+    <Compile Include="Modules\Core\Interop\CommonDllNames.cs" />
+    <Compile Include="Modules\Core\Interop\CoreErrorHelper.cs" />
+    <Compile Include="Modules\Core\Interop\CoreHelpers.cs" />
+    <Compile Include="Modules\Core\Interop\CoreNativeMethods.cs" />
+    <Compile Include="Modules\Core\PropertySystem\PropertyKey.cs" />
+    <Compile Include="Modules\Core\PropertySystem\PropVariant.cs" />
+    <Compile Include="Modules\Core\PropertySystem\PropVariantNativeMethods.cs" />
+    <Compile Include="Modules\ImageViewModel.cs" />
+    <Compile Include="Modules\PanelMarginConverter.cs" />
+    <Compile Include="Modules\PanelWidthConverter.cs" />
+    <Compile Include="Modules\PlaylistManager.cs" />
+    <Compile Include="Modules\Shell\Common\DefaultShellImageSizes.cs" />
+    <Compile Include="Modules\Shell\Common\EnumUnknown.cs" />
+    <Compile Include="Modules\Shell\Common\IconReference.cs" />
+    <Compile Include="Modules\Shell\Common\SearchCondition.cs" />
+    <Compile Include="Modules\Shell\Common\SearchConditionFactory.cs" />
+    <Compile Include="Modules\Shell\Common\ShellEnums.cs" />
+    <Compile Include="Modules\Shell\Common\ShellFile.cs" />
+    <Compile Include="Modules\Shell\Common\ShellFileSystemFolder.cs" />
+    <Compile Include="Modules\Shell\Common\ShellFolder.cs" />
+    <Compile Include="Modules\Shell\Common\ShellFolderItems.cs" />
+    <Compile Include="Modules\Shell\Common\ShellHelper.cs" />
+    <Compile Include="Modules\Shell\Common\ShellItemArray.cs" />
+    <Compile Include="Modules\Shell\Common\ShellLibrary.cs" />
+    <Compile Include="Modules\Shell\Common\ShellLink.cs" />
+    <Compile Include="Modules\Shell\Common\ShellNonFileSystemFolder.cs" />
+    <Compile Include="Modules\Shell\Common\ShellNonFileSystemItem.cs" />
+    <Compile Include="Modules\Shell\Common\ShellObject.cs" />
+    <Compile Include="Modules\Shell\Common\ShellObjectCollection.cs" />
+    <Compile Include="Modules\Shell\Common\ShellObjectContainer.cs" />
+    <Compile Include="Modules\Shell\Common\ShellObjectFactory.cs" />
+    <Compile Include="Modules\Shell\Common\ShellObjectNode.cs" />
+    <Compile Include="Modules\Shell\Common\ShellPropertyDescriptionsCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\Common\ShellSavedSearchCollection.cs" />
+    <Compile Include="Modules\Shell\Common\ShellSearchCollection.cs" />
+    <Compile Include="Modules\Shell\Common\ShellSearchConnector.cs" />
+    <Compile Include="Modules\Shell\Common\ShellSearchFolder.cs" />
+    <Compile Include="Modules\Shell\Common\ShellThumbnail.cs" />
+    <Compile Include="Modules\Shell\Common\ShellThumbnailEnums.cs" />
+    <Compile Include="Modules\Shell\Common\SortColumn.cs" />
+    <Compile Include="Modules\Shell\Interop\Common\ShellCOMClasses.cs" />
+    <Compile Include="Modules\Shell\Interop\Common\ShellCOMGuids.cs" />
+    <Compile Include="Modules\Shell\Interop\Common\ShellCOMInterfaces.cs" />
+    <Compile Include="Modules\Shell\Interop\Common\ShellNativeMethods.cs" />
+    <Compile Include="Modules\Shell\Interop\Common\WindowUtilities.cs" />
+    <Compile Include="Modules\Shell\Interop\KnownFolders\KnownFoldersCOMGuids.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\Interop\KnownFolders\KnownFoldersCOMInterfaces.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\Interop\KnownFolders\KnownFoldersNativeMethods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\Interop\PropertySystemCOMInterfaces.cs" />
+    <Compile Include="Modules\Shell\Interop\PropertySystemNativeMethods.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TabbedThumbnail.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TabbedThumbnailBitmapRequestedEventArgs.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TabbedThumbnailEventArgs.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TabbedThumbnailManager.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TabbedThumbnailNativeMethods.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TabbedThumbnailProxyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\Interop\TaskBar\TabbedThumbnailScreenCapture.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TaskbarCOMInterfaces.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TaskbarInterfaces.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TaskbarManager.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TaskbarNativeMethods.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TaskbarProgressBarState.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TaskbarWindow.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\TaskbarWindowManager.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\ThumbnailButton.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\ThumbnailButtonClickedEventArgs.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\ThumbnailToolbarManager.cs" />
+    <Compile Include="Modules\Shell\Interop\TaskBar\ThumbnailToolbarProxyWindow.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\DefinitionOptions.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\FileSystemKnownFolder.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\FolderCategory.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\FolderProperties.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\FoldersIdentifiers.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\FolderTypes.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\IKnownFolder.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\KnownFolderHelper.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\KnownFolders.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\KnownFolderSettings.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\NonFileSystemKnownFolder.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\RedirectionCapabilities.cs" />
+    <Compile Include="Modules\Shell\KnownFolders\RetrievalOptions.cs" />
+    <Compile Include="Modules\Shell\PropertySystem\IShellProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\ShellProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\ShellProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\ShellPropertyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\ShellPropertyDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\ShellPropertyDescriptionsCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\ShellPropertyEnums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\ShellPropertyEnumType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\ShellPropertyWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\StronglyTypedProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\PropertySystem\SystemProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modules\Shell\IPropertyStore.cs" />
+    <Compile Include="Modules\Shell\LocalizedMessages.Designer.cs" />
+    <Page Include="Controls\AlbumControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AlbumViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ArtistAlbumViewControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ArtistViewControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MobileDeviceMediaBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlaylistControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SidePanelTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UsbDeviceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\VideoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\AlbumControl.xaml.cs">
+      <DependentUpon>AlbumControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AlbumViewControl.xaml.cs">
+      <DependentUpon>AlbumViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ArtistAlbumViewControl.xaml.cs">
+      <DependentUpon>ArtistAlbumViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ArtistViewControl.xaml.cs">
+      <DependentUpon>ArtistViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlaylistControl.xaml.cs">
+      <DependentUpon>PlaylistControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UsbDeviceControl.xaml.cs">
+      <DependentUpon>UsbDeviceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\SliderStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ListBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Modules\FFTDataSize.cs" />
+    <Compile Include="Modules\GridLengthAnimation.cs" />
+    <Compile Include="Modules\ISoundPlayer.cs" />
+    <Compile Include="Modules\SQLiteDatabase.cs" />
+    <Compile Include="Modules\MediaFile.cs" />
+    <Compile Include="Modules\MusicLibraryManager.cs" />
+    <Compile Include="Modules\RemovableDrivesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\StringHelper.cs" />
+    <Compile Include="Modules\UsbDeviceManager.cs" />
+    <Compile Include="Modules\DirBrowser.cs" />
+    <Compile Include="Modules\DirScan.cs" />
+    <Compile Include="Modules\ImageConverter.cs" />
+    <Compile Include="Modules\MediaInfo.cs" />
+    <Compile Include="Modules\MusicLibrary.cs" />
+    <Compile Include="Modules\Playlist.cs" />
+    <Compile Include="Modules\PlayMusic.cs" />
+    <Compile Include="Modules\Tagger.cs" />
+    <Compile Include="Modules\UsbDrive.cs" />
+    <Compile Include="Modules\XmlExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\searchIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Search Icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\iTunes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow-repeat-once.png" />
+    <Resource Include="Images\arrow-repeat.png" />
+    <Resource Include="Images\Arrow-Right.png" />
+    <Resource Include="Images\Blue Applications.png" />
+    <Resource Include="Images\Blue Documents.png" />
+    <Resource Include="Images\Blue Library.png" />
+    <Resource Include="Images\Blue Movies.png" />
+    <Resource Include="Images\Blue Music.png" />
+    <Resource Include="Images\Blue Pictures.png" />
+    <Resource Include="Images\Import_light.png" />
+    <Resource Include="Images\Next-Track.png" />
+    <Resource Include="Images\Noir Add folder.png" />
+    <Resource Include="Images\playlist_silver.png" />
+    <Resource Include="Images\Previous-Track.png" />
+    <Resource Include="Images\Toolbar - Playlist.png" />
+    <Resource Include="Images\unknown Album.jpg" />
+    <Resource Include="Images\Volume-Mute.png" />
+    <Resource Include="Images\White Burn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\Images\Default Album Art.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AppIcon.ico" />
+    <None Include="Resources\Save.png" />
+    <Resource Include="Resources\UnknownAlbum.png" />
+    <None Include="Resources\UnknownAlbum.pngg" />
+    <Resource Include="Resources\AppIcon1.ico" />
+    <None Include="Resources\Pause.ico" />
+    <None Include="Resources\Previous.ico" />
+    <None Include="Resources\Next.ico" />
+    <None Include="Resources\Play.ico" />
+    <Resource Include="Controls\TextFile1.txt" />
+    <Resource Include="bin\Debug\Images\Button_Shuffle.png" />
+    <Resource Include="AppIcon.ico" />
+    <Resource Include="bin\Debug\Images\add-folder-512.gif" />
+    <Resource Include="bin\Debug\Images\Floppy.ico" />
+    <Resource Include="bin\Debug\Images\folder_128x128.png" />
+    <Resource Include="bin\Debug\Images\HDD -2.ico" />
+    <Resource Include="bin\Debug\Images\tasks_scheduled_folder_google-128.png" />
+    <None Include="bin\Debug\Images\arrow_right.png" />
+    <None Include="bin\Debug\Images\arrow-repeat.png" />
+    <None Include="bin\Debug\Images\arrow-repeat-once.png" />
+    <None Include="bin\Debug\Images\black_star_u2605_icon_256x256.png" />
+    <None Include="bin\Debug\Images\Book.png" />
+    <None Include="bin\Debug\Images\Close.png" />
+    <None Include="bin\Debug\Images\Cross.png" />
+    <None Include="bin\Debug\Images\Downloads.png" />
+    <None Include="bin\Debug\Images\Fast-Backward.png" />
+    <None Include="bin\Debug\Images\Folder.ico" />
+    <None Include="bin\Debug\Images\Folder_black-128.png" />
+    <None Include="bin\Debug\Images\Heart.png" />
+    <None Include="bin\Debug\Images\iPhone.png" />
+    <None Include="bin\Debug\Images\Magic-Wand.png" />
+    <None Include="bin\Debug\Images\moving-equalizer-animated-gif - Copy.gif" />
+    <None Include="bin\Debug\Images\Music.png" />
+    <None Include="bin\Debug\Images\Mute%28Original%29.png" />
+    <None Include="bin\Debug\Images\Mute.png" />
+    <None Include="bin\Debug\Images\Padlock.png" />
+    <None Include="bin\Debug\Images\Padlock-Open.png" />
+    <None Include="bin\Debug\Images\pause.png" />
+    <None Include="bin\Debug\Images\Play.png" />
+    <None Include="bin\Debug\Images\Playlist.png" />
+    <None Include="bin\Debug\Images\playlist_black.png" />
+    <None Include="bin\Debug\Images\Previous-Track.png" />
+    <None Include="bin\Debug\Images\Search Icon.jpg" />
+    <None Include="bin\Debug\Images\Search.ico" />
+    <None Include="bin\Debug\Images\Search.png" />
+    <None Include="bin\Debug\Images\Toolbar - Shuffle.png" />
+    <None Include="bin\Debug\Images\Unknown Artist.PNG" />
+    <None Include="bin\Debug\Images\Video.png" />
+    <None Include="bin\Debug\Images\Volume-down.png" />
+    <None Include="bin\Debug\Images\Volume-Mute%281%29.png" />
+    <None Include="bin\Debug\Images\Volume-Mute.png" />
+    <None Include="bin\Debug\Images\Volume-up.png" />
+    <None Include="bin\Debug\Images\Add Playlist.png" />
+    <None Include="bin\Debug\Images\animated.gif" />
+    <None Include="bin\Debug\Images\SavePlayList.png" />
+    <None Include="bin\Debug\Images\HDD -2.png" />
+    <Content Include="bin\Debug\Sounds\4. Mphoza - Moove %28Original Mix%29.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Controls\ID3Lib\Id3Lib.csproj">
+      <Project>{4C0E405B-FBE5-4949-8953-0B4AEB0D22B8}</Project>
+      <Name>Id3Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="Controls\Mp3Lib\Mp3Lib.csproj">
+      <Project>{E16E2254-A7A2-4E45-95B9-8613C67B3FD4}</Project>
+      <Name>Mp3Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

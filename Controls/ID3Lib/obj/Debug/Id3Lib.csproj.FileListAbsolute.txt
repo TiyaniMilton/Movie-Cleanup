@@ -1,0 +1,31 @@
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.pdb
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.pdb
+M:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.pdb
+M:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\ICSharpCode.SharpZipLib.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\ResolveAssemblyReference.cache
+M:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\ICSharpCode.SharpZipLib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\ResolveAssemblyReference.cache
+L:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.pdb
+I:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.XML
+I:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.pdb
+I:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\ICSharpCode.SharpZipLib.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.csprojResolveAssemblyReference.cache
+I:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.pdb
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.dll
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\Id3Lib.pdb
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\bin\Debug\ICSharpCode.SharpZipLib.dll
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.csprojResolveAssemblyReference.cache
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.dll
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\Controls\ID3Lib\obj\Debug\Id3Lib.pdb

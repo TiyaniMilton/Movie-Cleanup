@@ -1,0 +1,26 @@
+C:\Downloads\csid3lib-v0.6-src\id3lib\Mp3Lib\bin\Release\Mp3Lib.dll
+C:\Downloads\csid3lib-v0.6-src\id3lib\Mp3Lib\bin\Release\Mp3Lib.pdb
+C:\Downloads\csid3lib-v0.6-src\id3lib\Mp3Lib\bin\Release\Id3Lib.dll
+C:\Downloads\csid3lib-v0.6-src\id3lib\Mp3Lib\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Downloads\csid3lib-v0.6-src\id3lib\Mp3Lib\bin\Release\Id3Lib.pdb
+C:\Downloads\csid3lib-v0.6-src\id3lib\Mp3Lib\obj\Release\ResolveAssemblyReference.cache
+C:\Downloads\csid3lib-v0.6-src\id3lib\Mp3Lib\obj\Release\Mp3Lib.dll
+C:\Downloads\csid3lib-v0.6-src\id3lib\Mp3Lib\obj\Release\Mp3Lib.pdb
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Mp3Lib.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Mp3Lib.pdb
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Id3Lib.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\ICSharpCode.SharpZipLib.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Id3Lib.pdb
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Id3Lib.xml
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\obj\Release\ResolveAssemblyReference.cache
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\obj\Release\Mp3Lib.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\obj\Release\Mp3Lib.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Mp3Lib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Mp3Lib.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Id3Lib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\ICSharpCode.SharpZipLib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Id3Lib.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\bin\Release\Id3Lib.xml
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\obj\Release\ResolveAssemblyReference.cache
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\obj\Release\Mp3Lib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\Mp3Lib\obj\Release\Mp3Lib.pdb

@@ -1,0 +1,222 @@
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.exe
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.pdb
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.pdb
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.xml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.pdb
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.xml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.csproj.ResolveComReference.cache
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\SliderStyle.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ListBoxStyle.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ScrollBar.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.g.cs
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.g.cs
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.g.cs
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.g.cs
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_Content.g.cs
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.cache
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.lref
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.g.resources
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie_Cleanup.Properties.Resources.resources
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.exe
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.pdb
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.baml
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.g.cs
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.g.cs
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Interop.WMPLib.dll
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.csproj.ResolveComReference.cache
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\PlaylistControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\SidePanelTab.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Resources\Styles.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\SliderStyle.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ListBoxStyle.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ScrollBar.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\PlaylistControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\SidePanelTab.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_Content.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.cache
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.lref
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.exe
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.pdb
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.dll
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.dll
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\ICSharpCode.SharpZipLib.dll
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.pdb
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.xml
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.pdb
+M:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.xml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.g.resources
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie_Cleanup.Properties.Resources.resources
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GenerateResource.read.1.tlog
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GenerateResource.write.1.tlog
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.exe
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.pdb
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.exe
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.pdb
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.dll
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.dll
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\ICSharpCode.SharpZipLib.dll
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.pdb
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.xml
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.pdb
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.xml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\ResolveAssemblyReference.cache
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\PlaylistControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\SidePanelTab.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Resources\Styles.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\SliderStyle.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ListBoxStyle.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ScrollBar.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\PlaylistControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\SidePanelTab.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_Content.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.cache
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.lref
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.g.resources
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie_Cleanup.Properties.Resources.resources
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GenerateResource.read.1.tlog
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GenerateResource.write.1.tlog
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.exe
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.pdb
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\MobileDeviceMediaBrowser.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\MobileDeviceMediaBrowser.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\VideoControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\VideoControl.g.cs
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.exe
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.pdb
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.dll
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.dll
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\ICSharpCode.SharpZipLib.dll
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.pdb
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.xml
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.pdb
+I:\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.xml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.csprojResolveAssemblyReference.cache
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\MobileDeviceMediaBrowser.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\PlaylistControl.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\SidePanelTab.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\VideoControl.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Resources\Styles.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\SliderStyle.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ListBoxStyle.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ScrollBar.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\MobileDeviceMediaBrowser.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\PlaylistControl.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\SidePanelTab.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\VideoControl.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_Content.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.cache
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.lref
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.baml
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.g.resources
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie_Cleanup.Properties.Resources.resources
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.csproj.GenerateResource.Cache
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.exe
+I:\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.pdb
+L:\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.exe.config
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.exe.config
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.exe
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.pdb
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.exe
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.dll
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.dll
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\ICSharpCode.SharpZipLib.dll
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.pdb
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Id3Lib.xml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.pdb
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Mp3Lib.xml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.csprojResolveAssemblyReference.cache
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\MobileDeviceMediaBrowser.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\PlaylistControl.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\SidePanelTab.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\VideoControl.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Resources\Styles.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\SliderStyle.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ListBoxStyle.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Styles\ScrollBar.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumControl.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\AlbumViewControl.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistAlbumViewControl.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\MobileDeviceMediaBrowser.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\PlaylistControl.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\SidePanelTab.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\UsbDeviceControl.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\VideoControl.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\App.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_Content.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.cache
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup_MarkupCompile.lref
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Controls\ArtistViewControl.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\MainWindow.baml
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.g.resources
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie_Cleanup.Properties.Resources.resources
+G:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.csproj.GenerateResource.Cache
+F:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\bin\Debug\Movie Cleanup.exe.config
+F:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.exe
+F:\My Backups (Frm old Laptop IQ)\Movie Cleanup\Movie Cleanup\obj\x86\Debug\Movie Cleanup.pdb

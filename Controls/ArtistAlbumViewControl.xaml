@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Movie_Cleanup.Controls.ArtistAlbumViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="42">
+    <Grid DataContext="{Binding}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="42"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Height="36" Width="35" VerticalAlignment="Center"
+                       Source="{Binding ArtistArt}" />
+        <Label Grid.Column="1" Content="{Binding ArtistName}" FontSize="11" FontFamily="Lucida Sans Unicode" VerticalAlignment="Center"></Label>        
+    </Grid>
+</UserControl>

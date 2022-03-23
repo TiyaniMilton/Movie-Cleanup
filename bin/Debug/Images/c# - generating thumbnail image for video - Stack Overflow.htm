@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>c# - generating thumbnail image for video - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="generating thumbnail image for video">
+    <meta name="og:description" content="I am using VSTS 2008 + C# + .Net 3.5 on Windows 7. I want to use Expression Encoder 3 to generate thumbnail image for video (wmv format) every 30 seconds -- e.g. for a 5 minutes video, there will b...">
+    <meta name="og:url" content="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video">
+    <link rel="canonical" href="./c# - generating thumbnail image for video - Stack Overflow_files/c# - generating thumbnail image for video - Stack Overflow.htm">
+
+    
+    
+    <script type="text/javascript" async="" src="./c# - generating thumbnail image for video - Stack Overflow_files/ados"></script><script async="" src="./c# - generating thumbnail image for video - Stack Overflow_files/beacon.js"></script><script type="text/javascript" async="" src="./c# - generating thumbnail image for video - Stack Overflow_files/ga.js"></script><script type="text/javascript" async="" src="./c# - generating thumbnail image for video - Stack Overflow_files/quant.js"></script><script type="text/javascript" async="" src="./c# - generating thumbnail image for video - Stack Overflow_files/ados.js"></script><script type="text/javascript" src="./c# - generating thumbnail image for video - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./c# - generating thumbnail image for video - Stack Overflow_files/stub.en.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./c# - generating thumbnail image for video - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;generating thumbnail image for video&#39;" href="http://stackoverflow.com/feeds/question/2840857">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:2840857});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '2840857');
+            
+                    });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1386945498,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"c8902df0431d7d3cb0b7d235686fdb8c","isAnonymous":true,"ab":{"anonymoushero":{"v":"2","g":2}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"e0bbd4760e83","js/moderator.en.js":"1a411fd265fe","js/full-anon.en.js":"f11ad0c721c5","js/full.en.js":"4281101ad6b6","js/wmd.en.js":"849f408083f3","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"d1d834ef85d2","js/help.en.js":"d3cc74d8a93a","js/tageditor.en.js":"6d51a5f8d7f3","js/tageditornew.en.js":"111b781cf314","js/inline-tag-editing.en.js":"f951bd09dc69","js/revisions.en.js":"33fd38144303","js/review.en.js":"b44cee8b2b0b","js/tagsuggestions.en.js":"e4e7b952fcc7","js/post-validation.en.js":"c275fe37d674","js/explore-qlist.en.js":"73825bd006fc","js/events.en.js":"23bb11cfe220"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+        
+    </script>
+    
+        <script type="text/javascript">
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" type="text/javascript" src="./c# - generating thumbnail image for video - Stack Overflow_files/full-anon.en.js"></script><script async="" type="text/javascript" src="./c# - generating thumbnail image for video - Stack Overflow_files/post-validation.en.js"></script><script async="" type="text/javascript" src="./c# - generating thumbnail image for video - Stack Overflow_files/prettify-full.en.js"></script><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><link rel="stylesheet" type="text/css" href="chrome-extension://lfjamigppmepikjlacjdpgjaiojdjhoj/css/menu.css"><link href="./c# - generating thumbnail image for video - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"><script type="text/javascript" src="./c# - generating thumbnail image for video - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">Explore our sites</a></h3>
+    </div>
+    <div class="modal-content">
+        <ul class="current-site">
+                <li>
+                        <a href="http://stackoverflow.com/" class="current-site-link site-link js-site-link js-gps-track" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+    <div class="related-links js-related-links">
+            <a href="http://chat.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackexchange.com/" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+                </li>
+                <li class="related-site">
+                        <a href="http://meta.stackoverflow.com/" class="site-link js-site-link js-gps-track" data-gps-track="site.switch({ target_site:4, item_type:3 });site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    
+                </li>
+                            <li class="related-site">
+                    <a class="site-link js-site-link" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+        
+
+
+        
+            <div class="child-content"></div>
+
+    </div>
+</div>        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" data-child-content-url="/topbar/site-switcher/site-list" data-on-class="icon-site-switcher-on" title="A list of all 112 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                        <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f2840857%2fgenerating-thumbnail-image-for-video" class="login-link">sign up</a>    
+                        <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f2840857%2fgenerating-thumbnail-image-for-video" class="login-link">log in</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                        <a href="http://stackoverflow.com/help">help</a>
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () {
+        //topbar.init();
+        StackExchange.topbar.init();
+    });
+</script>    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                            <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                            <li><a id="nav-tour" href="http://stackoverflow.com/about">Tour</a></li>
+                            <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/about" id="tell-me-more" class="button">Take the tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            }
+            if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/" });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./c# - generating thumbnail image for video - Stack Overflow_files/c# - generating thumbnail image for video - Stack Overflow.htm" class="question-hyperlink">generating thumbnail image for video</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="2840857" id="question">
+    
+    <script type="text/javascript">
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1341026143",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1341026143"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjo1OTIzLCJkaSI6ImM4ZTRiZWFiNDM2ZTQ0ZGRhZTFhZDhjZWEyNTEwMDM2IiwiZG0iOjEsImZjIjo4ODA5LCJmbCI6MjQ0NCwia3ciOiJjIywubmV0LHZzdHMyMDA4LHZpZGVvLXByb2Nlc3NpbmcsZXhwcmVzc2lvbi1lbmNvZGVyIiwibnciOjIyLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby56YS8iLCJydiI6MCwicHIiOjE1NjgsInN0Ijo4Mjc3LCJ6biI6NDMsInRzIjoxMzg2OTQ1NTE1ODU4LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&s=16pv2tHRR_agHopwOSWLuVcLBTU" rel="nofollow" target="_blank" title=""><img src="./c# - generating thumbnail image for video - Stack Overflow_files/46a9844d6e504212a85bc72ddd7dd829.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" src="./c# - generating thumbnail image for video - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="2840857">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>3</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="description">
+
+        <p>I am using VSTS 2008 + C# + .Net 3.5 on Windows 7. I want to use Expression Encoder 3 to generate thumbnail image for video (wmv format) every 30 seconds -- e.g. for a 5 minutes video, there will be 10 thumbnails which reflects video at the time of 0 second, 30 second, 1 minute, 1 minute and 30 seconds, etc.</p>
+
+<p>Any reference code?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c%23" class="post-tag" title="show questions tagged &#39;c#&#39;" rel="tag">c#</a> <a href="http://stackoverflow.com/questions/tagged/.net" class="post-tag" title="show questions tagged &#39;.net&#39;" rel="tag">.net</a> <a href="http://stackoverflow.com/questions/tagged/vsts2008" class="post-tag" title="show questions tagged &#39;vsts2008&#39;" rel="tag">vsts2008</a> <a href="http://stackoverflow.com/questions/tagged/video-processing" class="post-tag" title="show questions tagged &#39;video-processing&#39;" rel="tag">video-processing</a> <a href="http://stackoverflow.com/questions/tagged/expression-encoder" class="post-tag" title="" rel="tag">expression-encoder</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/2840857" title="short permalink to this question" class="short-link" id="link-post-2840857">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2840857/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/2840857/revisions" title="show all edits to this post">edited <span title="2013-11-29 18:33:50Z" class="relativetime">Nov 29 at 18:33</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/206730/kiquenet"><div class="gravatar-wrapper-32"><img src="./c# - generating thumbnail image for video - Stack Overflow_files/7gTXP.jpg" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/206730/kiquenet">Kiquenet</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">2,092</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="38 silver badges"><span class="badge2"></span><span class="badgecount">38</span></span><span title="88 bronze badges"><span class="badge3"></span><span class="badgecount">88</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2010-05-15 16:28:34Z" class="relativetime">May 15 '10 at 16:28</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/63235/george2"><div><img src="./c# - generating thumbnail image for video - Stack Overflow_files/ae36532db377af0aac118a36a6656615" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/63235/george2">George2</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">9,159</span><span title="52 gold badges"><span class="badge1"></span><span class="badgecount">52</span></span><span title="206 silver badges"><span class="badge2"></span><span class="badgecount">206</span></span><span title="357 bronze badges"><span class="badge3"></span><span class="badgecount">357</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2840857" class="comments dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-2840857" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add comment</a>
+    </td>
+</tr>            </tbody></table>    
+</div>
+
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								1 Answer
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="2840975"></a>
+<div id="answer-2840975" class="answer accepted-answer" data-answerid="2840975">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="2840975">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">8</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+
+
+
+<td class="answercell">
+    <div class="post-text"><p>Using the <a href="http://msdn.microsoft.com/en-us/library/dd440765%28v=Expression.10%29.aspx">SDK</a> you could try using the <a href="http://msdn.microsoft.com/en-us/library/microsoft.expression.encoder.audiovideofile.getthumbnail%28v=Expression.30%29.aspx">GetThumbnail</a> method:</p>
+
+<pre class="lang-cs prettyprint prettyprinted" style=""><code><span class="kwd">var</span><span class="pln"> video </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">MediaItem</span><span class="pun">(</span><span class="pln">filePath</span><span class="pun">);</span><span class="pln">
+using </span><span class="pun">(</span><span class="kwd">var</span><span class="pln"> bitmap </span><span class="pun">=</span><span class="pln"> video</span><span class="pun">.</span><span class="typ">MainMediaFile</span><span class="pun">.</span><span class="typ">GetThumbnail</span><span class="pun">(</span><span class="pln">
+    </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">TimeSpan</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">),</span><span class="pln"> 
+    </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="typ">Drawing</span><span class="pun">.</span><span class="typ">Size</span><span class="pun">(</span><span class="lit">640</span><span class="pun">,</span><span class="pln"> </span><span class="lit">480</span><span class="pun">)))</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="com">// do something with the bitmap like:</span><span class="pln">
+    bitmap</span><span class="pun">.</span><span class="typ">Save</span><span class="pun">(</span><span class="str">"thumb1.jpg"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/2840975" title="short permalink to this answer" class="short-link" id="link-post-2840975">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2840975/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-05-15 17:08:02Z" class="relativetime">May 15 '10 at 17:08</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/29407/darin-dimitrov"><div><img src="./c# - generating thumbnail image for video - Stack Overflow_files/e3a181e9cdd4757a8b416d93878770c5" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/29407/darin-dimitrov">Darin Dimitrov</a><br>
+        <span class="reputation-score" title="reputation score 482033" dir="ltr">482k</span><span title="55 gold badges"><span class="badge1"></span><span class="badgecount">55</span></span><span title="1236 silver badges"><span class="badge2"></span><span class="badgecount">1236</span></span><span title="1488 bronze badges"><span class="badge3"></span><span class="badgecount">1488</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2840975" class="comments" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+    <tr id="comment-2885142" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+	<span class="comment-copy">Thanks, question answered!</span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/63235/george2" title="9159 reputation" class="comment-user owner">George2</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video#comment2885142_2840975"><span title="2010-05-16 05:18:48Z" class="relativetime-clean">May 16 '10 at 5:18</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+    <tr id="comment-2885931" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+	<span class="comment-copy">Here is a related question, appreciate if you could help.
+
+<a href="http://stackoverflow.com/questions/2842675/how-to-get-a-part-of-a-video" title="how to get a part of a video">stackoverflow.com/questions/2842675/…</a></span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/63235/george2" title="9159 reputation" class="comment-user owner">George2</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video#comment2885931_2840975"><span title="2010-05-16 10:31:20Z" class="relativetime-clean">May 16 '10 at 10:31</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+    <tr id="comment-4404389" class="comment">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>   
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+	<span class="comment-copy">+1 for this. Any workarounds for when the encoder cannot find a codec for a specific file, though? Just that I'm running into problems with MP4s.</span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/326450/lazo" title="193 reputation" class="comment-user">lazo</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video#comment4404389_2840975"><span title="2010-11-04 04:08:08Z" class="relativetime-clean">Nov 4 '10 at 4:08</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+    <tr id="comment-30274942" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="comment-score">
+                            
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+	<span class="comment-copy">@George2 link not found (to SO)</span>
+	–&nbsp;
+		<a href="http://stackoverflow.com/users/206730/kiquenet" title="2092 reputation" class="comment-user">Kiquenet</a>
+	<span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video#comment30274942_2840975"><span title="2013-11-29 18:34:33Z" class="relativetime-clean">Nov 29 at 18:34</span></a></span>
+				</div>
+
+        </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-2840975" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/2840857/answer/submit" method="post" class="post-form">
+							<input type="hidden" id="post-id" value="2840857">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="c8902df0431d7d3cb0b7d235686fdb8c">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f2840857%2fgenerating-thumbnail-image-for-video%23new-answer">login</a></h3>
+                        <script type="text/javascript">
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f2840857%2fgenerating-thumbnail-image-for-video%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script type="text/javascript"&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c%23" class="post-tag" title="show questions tagged &#39;c#&#39;" rel="tag">c#</a> <a href="http://stackoverflow.com/questions/tagged/.net" class="post-tag" title="show questions tagged &#39;.net&#39;" rel="tag">.net</a> <a href="http://stackoverflow.com/questions/tagged/vsts2008" class="post-tag" title="show questions tagged &#39;vsts2008&#39;" rel="tag">vsts2008</a> <a href="http://stackoverflow.com/questions/tagged/video-processing" class="post-tag" title="show questions tagged &#39;video-processing&#39;" rel="tag">video-processing</a> <a href="http://stackoverflow.com/questions/tagged/expression-encoder" class="post-tag" title="show questions tagged &#39;expression-encoder&#39;" rel="tag">expression-encoder</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+							<div class="module question-stats">
+					<p class="label-key">tagged</p>
+					<div class="tagged"><a href="http://stackoverflow.com/questions/tagged/c%23" class="post-tag" title="show questions tagged &#39;c#&#39;" rel="tag">c#</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">561625</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/.net" class="post-tag" title="show questions tagged &#39;.net&#39;" rel="tag">.net</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">172905</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/video-processing" class="post-tag" title="show questions tagged &#39;video-processing&#39;" rel="tag">video-processing</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">857</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/vsts2008" class="post-tag" title="show questions tagged &#39;vsts2008&#39;" rel="tag">vsts2008</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">271</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/expression-encoder" class="post-tag" title="show questions tagged &#39;expression-encoder&#39;" rel="tag">expression-encoder</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">67</span></span><br>
+</div>
+					<table id="qinfo">
+						<tbody><tr>
+							<td>
+								<p class="label-key">asked</p>
+							</td>
+							<td style="padding-left: 10px">
+								<p class="label-key" title="2010-05-15 16:28:34Z"><b>3 years ago</b></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="label-key">viewed</p>
+							</td>
+
+							<td style="padding-left: 10px">
+								<p class="label-key">
+									<b>2572 times</b>
+								</p>
+							</td>
+						</tr>
+							<tr>
+								<td>
+									<p class="label-key">active</p>
+								</td>
+								<td style="padding-left: 10px">
+									<p class="label-key"><b><a href="http://stackoverflow.com/questions/2840857/generating-thumbnail-image-for-video?lastactivity" class="lastactivity-link" title="2013-11-29 18:33:50Z">13 days ago</a></b></p>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+						
+			<script type="text/javascript">
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1924508524",17).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1924508524"><div id="careersadsdoublehigh" style="display:none;"></div><img height="0px" width="0px" border="0" src="./c# - generating thumbnail image for video - Stack Overflow_files/i(1).gif"></div>  
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=144" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/45138/grails-java-javascript-big-data-engineer-brandseye?a=T38QptII" target="_blank" title="Grails/Java/JavaScript Big Data Engineer at BrandsEye. Click to learn more."> Grails/Java/JavaScript Big Data Engineer<br> <span class="company">BrandsEye</span> <span class="location">Cape Town, South Africa</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/33743/java-web-services-developer-bloomberg-l-p?a=F9udiy52" target="_blank" title="Java Web Services Developer at Bloomberg L.P. Click to learn more."> Java Web Services Developer<br> <span class="company">Bloomberg L.P</span> <span class="location">New York, NY</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/45190/marketing-manager-amazon?a=T73skUxy" target="_blank" title="Marketing Manager at Amazon. Click to learn more."> Marketing Manager<br> <span class="company">Amazon</span> <span class="location">Seattle, WA / relocation</span> </a> </li> </ul> <img alt="" class="impression" src="./c# - generating thumbnail image for video - Stack Overflow_files/T38QptII-F9udiy52-T73skUxy-144" style="display:none"></div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+					<div class="related" data-tracker="rq=1">
+						<div class="spacer">
+<a href="http://stackoverflow.com/q/155314?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">14
+    </div>
+</a><a href="http://stackoverflow.com/questions/155314/how-do-i-get-a-video-thumbnail-in-net?rq=1" class="question-hyperlink">How do I get a Video Thumbnail in .Net?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/1033331?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/1033331/thumbnail-image-of-silverlight-video?rq=1" class="question-hyperlink">Thumbnail image of Silverlight video</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/1243010?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/1243010/strange-wcf-client-side-app-config-generated?rq=1" class="question-hyperlink">strange WCF client side app.config generated</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/1244037?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/1244037/silverlight-mediaelement-video-scale-issue?rq=1" class="question-hyperlink">Silverlight MediaElement video scale issue</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/2376949?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">7
+    </div>
+</a><a href="http://stackoverflow.com/questions/2376949/video-file-download-issue?rq=1" class="question-hyperlink">video file download issue</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/3055684?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/3055684/expression-encoder-3-sdk-screen-capture-c-sharp-sample?rq=1" class="question-hyperlink">Expression Encoder 3 SDK screen capture C# sample?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/4259570?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/4259570/what-is-a-fast-way-to-generate-and-draw-video-in-wpf?rq=1" class="question-hyperlink">What is a fast way to generate and draw video in WPF?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/12315704?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/12315704/video-thumbnail-generation?rq=1" class="question-hyperlink">Video Thumbnail generation</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/13017388?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">7
+    </div>
+</a><a href="http://stackoverflow.com/questions/13017388/get-image-from-video?rq=1" class="question-hyperlink">Get Image from Video</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/14069612?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/14069612/video-capture-using-expression-encoder-in-wpf?rq=1" class="question-hyperlink">Video capture using Expression Encoder in WPF</a>
+</div>
+
+					</div>
+				</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/2840857" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+	<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/2840857/ivc/f67c');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/2840857/ivc/f67c" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-cs</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/about">about</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/about/hiring">jobs</a>
+                    <a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MjAsImNtIjo5NTQsImNoIjoxMTc4LCJjciI6Mjc3NiwiZG0iOjQsImZjIjoyODYyLCJmbCI6Mjc1MSwibnciOjIyLCJydiI6MCwicHIiOjExNSwic3QiOjAsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2Fib3V0L2NvbnRhY3QiLCJyZSI6MX0&s=hRods5B22XvRBwWIwtIMekcyNF8">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Answers</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="statisticians, data analysts, data miners and data visualization experts">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackoverflow.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Overflow</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2013 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> 
+ with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="footer-flair">
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+            </div>
+            <div id="svnrev">
+                rev 2013.12.13.1226
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script type="text/javascript">var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script type="text/javascript">
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('c%23,.net,vsts2008,video-processing,expression-encoder');; ados_load(); });         
+</script>
+
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|c#|.net|vsts2008|video-processing|expression-encoder|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    var _comscore = _comscore || [];
+    (function () {
+        var ssl='https:'==document.location.protocol,
+            s=document.getElementsByTagName('script')[0],
+            ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src=(ssl?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+        s.parentNode.insertBefore(sc, s);
+        
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+        
+    })();
+    _comscore.push({ c1: "2", c2: "17440561" });
+    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+            
+
+</body></html>

@@ -1,0 +1,1307 @@
+﻿<Window x:Class="Movie_Cleanup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:Movie_Cleanup.Controls"
+        
+       
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" 
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:ax="clr-namespace:AxWMPLib;assembly=AxInterop.WMPLib"
+        
+        Icon="./Resources/AppIcon.ico"
+        Title="MuziQBase Player" Height="750" Width="1000"
+        WindowStyle="SingleBorderWindow" AllowsTransparency="False"
+    Background="Transparent" Loaded="Window_Loaded"><!--xmlns:gif="http://wpfanimatedgif.codeplex.com"-->
+    <!--xmlns:ax="clr-namespace:WMPLib"-->
+    <!--xmlns:mymod="clr-namespace:Movie_Cleanup.Modules"-->
+    <!--xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"-->
+    <!--xmlns:svl="clr-namespace:WPFSoundVisualizationLib;assembly=WPFSoundVisualizationLib"-->
+    <Window.Resources>
+        
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="WindowFrameBrush" StartPoint="0,0.5" EndPoint="1,0.5">
+                <GradientStop Color="#a5b8da" Offset="0.4"/>
+                <GradientStop Color="#d1d1d1" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="ButtonBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#a5b8da" Offset="0.0" />
+                <GradientStop Color="#a5b8da" Offset="0.25" />
+                <GradientStop Color="#d1d1d1" Offset="0.75" />
+                <GradientStop Color="#d1d1d1" Offset="1.0" />
+            </LinearGradientBrush>
+
+            <!--<SolidColorBrush x:Key="HorizontalSliderTrackNormalBackground" Color="#FFE7EAEA"/>-->
+            <!--<LinearGradientBrush x:Key="HorizontalSliderTrackNormalBorder" EndPoint="0,1" StartPoint="0,0">
+                <GradientStop Color="#FFAEB1AF" Offset="0.1"/>
+                <GradientStop Color="White" Offset=".9"/>
+            </LinearGradientBrush>-->
+
+            <LinearGradientBrush x:Key="HorizontalSliderTrackNormalBackground" EndPoint="0,1" StartPoint="0,0">
+                <GradientStop Color="#FFAEB1AF" Offset="0.1"/>
+                <GradientStop Color="White" Offset=".9"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="HorizontalSliderTrackNormalBorder" StartPoint="0.5,0" EndPoint="0.5,1" >
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#a5b8da" Offset="0.0" />
+                    <GradientStop Color="#a5b8da" Offset="0.25" />
+                    <GradientStop Color="#7089b3" Offset="0.75" />
+                    <GradientStop Color="#7089b3" Offset="1.0" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <Storyboard x:Key="SlideUpAnimation">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Height" Storyboard.TargetName="rowAlbumTracks">
+                    <EasingDoubleKeyFrame KeyTime="0:0:2" Value="220"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="SlideDownAnimation">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Height" Storyboard.TargetName="rowAlbumTracks">
+                    <SplineDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Style x:Key="alternatingStyle" TargetType="{x:Type ListViewItem}">
+                <Style.Triggers>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                        <Setter Property="Background" Value="LightSkyBlue"></Setter>
+                    </Trigger>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                        <Setter Property="Background" Value="LightGray"></Setter>
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="Orange"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="SliderRepeatButtonStyle" TargetType="{x:Type RepeatButton}">
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="IsTabStop" Value="false"/>
+                <Setter Property="Focusable" Value="false"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                            <!--<Rectangle Fill="Transparent"/>-->
+                            <!--<Border x:Name="TrackBackground" 
+ 
+ BorderBrush="{StaticResource HorizontalSliderTrackNormalBackground}"                                        
+ BorderThickness="1" CornerRadius="1"
+ Margin="5,0" VerticalAlignment="Center" Height="4.0" Grid.Row="1" />-->
+                            <!--<Rectangle Stroke="Black" StrokeThickness="0.5" Height="5" RadiusX="4" IsHitTestVisible="True" RadiusY="4" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="#FF131613" Offset="0.004"/>
+                                            <GradientStop Color="#FFB0B3B0" Offset="0.629"/>
+                                            <GradientStop Color="#FF686A68" Offset="0.987"/>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>-->
+                            <Grid>
+                                <Border>
+                                <!--<Ellipse Stroke="Gray"
+                             StrokeThickness="0.5"
+                             Name="Ellipse" 
+                             >-->
+                                    <!--Fill="Black"-->
+                                    <!--<Ellipse.Fill>-->
+                                    <Rectangle Stroke="Black" StrokeThickness="0.2" Height="7" RadiusX="3" IsHitTestVisible="True" RadiusY="3" >
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                            <GradientStop Color="#d9dcdf" Offset="0.0" />
+                                            <GradientStop Color="#d9dcdf" Offset="0.25" />
+                                            <GradientStop Color="#BEBEBE" Offset="0.75" />
+                                            <GradientStop Color="#BEBEBE" Offset="1.0" />
+                                        </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                            </Rectangle>
+                                                
+                                                    <!--</Ellipse.Fill>
+                                </Ellipse>-->
+                                    </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="DecreaseSliderButtonStyle" TargetType="{x:Type RepeatButton}">
+                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="IsTabStop" Value="false"/>
+                <Setter Property="Focusable" Value="false"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                            <!--<Border Height="18" Background="DimGray" CornerRadius="0,6,6,0" Margin="0,0,0,0" >-->
+                                <!--<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#a5b8da" Offset="0.0" />
+                                        <GradientStop Color="#a5b8da" Offset="0.25" />
+                                        <GradientStop Color="#7089b3" Offset="0.75" />
+                                        <GradientStop Color="#7089b3" Offset="1.0" />
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>-->
+                            <!--</Border>-->
+<!--Background="{StaticResource HorizontalSliderTrackNormalBackground}"-->
+                            <Border x:Name="TrackBackground" 
+ 
+ BorderBrush="{StaticResource HorizontalSliderTrackNormalBorder}"                                        
+ BorderThickness="1" CornerRadius="1"
+ Margin="5,0" VerticalAlignment="Center" Height="4.0" Grid.Row="1" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="SliderThumbStyle" TargetType="{x:Type Thumb}">
+                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                <Setter Property="OverridesDefaultStyle" Value="false"/>
+                <Setter Property="Height" Value="12"/>
+                <Setter Property="Width" Value="12"/>
+                <Setter Property="Margin" Value="-3"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Grid>
+                                <Border CornerRadius="9,9,9,9"
+                            Background="Black"/>
+                                <Ellipse Stroke="Gray"
+                             StrokeThickness="0.5"
+                             Name="Ellipse" 
+                             ><!--Fill="Black"-->
+                                    <Ellipse.Fill>
+                                        
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                        <GradientStop Color="#d9dcdf" Offset="0.0" />
+                                        <GradientStop Color="#d9dcdf" Offset="0.25" />
+                                        <GradientStop Color="#BEBEBE" Offset="0.75" />
+                                        <GradientStop Color="#BEBEBE" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                        </Ellipse.Fill>
+                                </Ellipse>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <Style x:Key="ScaleStyle" TargetType="{x:Type FrameworkElement}">
+                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform />
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation To="1.2" Duration="0:0:0.2"
+                                         Storyboard.TargetProperty="RenderTransform.ScaleX" />
+                                <DoubleAnimation To="1.2" Duration="0:0:0.2"
+                                         Storyboard.TargetProperty="RenderTransform.ScaleY" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation To="1.0" Duration="0:0:0.1"
+                                         Storyboard.TargetProperty="RenderTransform.ScaleX" />
+                                <DoubleAnimation To="1.0" Duration="0:0:0.1"
+                                         Storyboard.TargetProperty="RenderTransform.ScaleY" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="SimpleButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Border Background="{StaticResource ButtonBackground}" VerticalAlignment="Stretch" CornerRadius="12" HorizontalAlignment="Stretch"/>
+                                <Border x:Name="BorderPressed"  Opacity="0" Background="#9badcc" VerticalAlignment="Stretch" CornerRadius="12" HorizontalAlignment="Stretch"/>
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="MainContent" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="BorderPressed" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="BorderPressed" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="MyCustomStyleForSlider" TargetType="{x:Type Slider}">
+                <Setter Property="Background" Value="Aqua"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Slider}"><!--Background="{TemplateBinding Background}"-->
+                            <Border CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TickBar x:Name="TopTick" Visibility="Collapsed" Fill="{TemplateBinding Foreground}" Placement="Top" Height="6" Grid.Row="0"/>
+                                    <TickBar x:Name="BottomTick" Visibility="Collapsed" Fill="{TemplateBinding Foreground}" Placement="Bottom" Height="6" Grid.Row="0"/>
+                                    <Border x:Name="TrackBackground"  
+ BorderThickness="1" CornerRadius="1"
+ Margin="5,0" VerticalAlignment="Center" Height="1" Grid.Row="1" >
+                                        <Canvas Margin="-6,-1"><!--HighlightBrushKey-->
+                                            <Rectangle Visibility="Hidden" x:Name="PART_SelectionRange" Height="1"
+ Fill="Black"
+ Stroke="AliceBlue"
+ StrokeThickness="1.0"/>
+                                                <!--Fill="{DynamicResource {x:Static SystemColors.ActiveBorderColor}}"
+ Stroke="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"-->
+                                        </Canvas>
+                                    </Border>
+                                    <Track x:Name="PART_Track" Grid.Row="1">
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static Slider.DecreaseLarge}"  Style="{StaticResource SliderRepeatButtonStyle}"/>
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource DecreaseSliderButtonStyle}"/>
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb x:Name="Thumb" Style="{StaticResource SliderThumbStyle}"/>
+                                            <!--<Thumb x:Name="Thumb" Style="{StaticResource CustomThumbForSlider}" Background="Black"/>-->
+                                        </Track.Thumb>
+                                    </Track>
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <Style x:Key="CustomThumbForSlider" TargetType="{x:Type Thumb}">
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Ellipse Fill="#FF8F4040" Stroke="#FF000000" Height="50" Width="50"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!--<Style x:Key="SliderRepeatButtonStyle" TargetType="{x:Type RepeatButton}">
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="IsTabStop" Value="false"/>
+                <Setter Property="Focusable" Value="false"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                            <Rectangle Fill="Transparent"/>  
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>-->
+            
+
+            <!--<Style x:Key="DecreaseSliderButtonStyle" TargetType="{x:Type RepeatButton}">
+                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="IsTabStop" Value="false"/>
+                <Setter Property="Focusable" Value="false"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                            <Border Height="18" Background="DimGray" CornerRadius="0,6,6,0" Margin="0,0,0,0" />-->
+                            
+                            <!--<Border Height="20" Background="Black" CornerRadius="6" Margin="0,0,-12,0" />-->
+                        <!--</ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>-->
+
+            <Style TargetType="{x:Type Slider}" x:Key="OpacitySliderStyle" >
+                <!-- Any other properties you want to set -->
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Slider">
+                            <Grid x:Name="RootElement">
+                                <!-- States -->
+                                <Grid.Resources>
+                                    <!-- Transition to the slider's default state -->
+                                    <Storyboard x:Key="Normal State">
+                                        <DoubleAnimation Duration="0:0:0" Storyboard.TargetName="RootElement" Storyboard.TargetProperty="Opacity" To="1" />
+                                    </Storyboard>
+
+                                    <!-- Transition to the slider's mouseover state -->
+                                    <Storyboard x:Key="MouseOver State">
+                                        <DoubleAnimation Duration="0:0:0" Storyboard.TargetName="RootElement" Storyboard.TargetProperty="Opacity" To="1" />
+                                    </Storyboard>
+
+                                    <!-- Transition to the slider's disabled state -->
+                                    <Storyboard x:Key="Disabled State">
+                                        <DoubleAnimation Duration="0:0:0" Storyboard.TargetName="RootElement" Storyboard.TargetProperty="Opacity" To="0.5" />
+                                    </Storyboard>
+
+                                    <!-- RepeatButton Templates -->
+                                    <ControlTemplate x:Key="LeftRepeatButtonTemplate">
+                                        <Grid x:Name="RootElement">
+                                            <Rectangle Stroke="Black" StrokeThickness="0.5" Height="14" RadiusX="4" IsHitTestVisible="True" RadiusY="4" >
+                                                <Rectangle.Fill>
+                                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                        <LinearGradientBrush.GradientStops>
+                                                            <GradientStop Color="#FF131613" Offset="0.004"/>
+                                                            <GradientStop Color="#FFB0B3B0" Offset="0.629"/>
+                                                            <GradientStop Color="#FF686A68" Offset="0.987"/>
+                                                        </LinearGradientBrush.GradientStops>
+                                                    </LinearGradientBrush>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                        </Grid>
+                                    </ControlTemplate>
+                                    <ControlTemplate x:Key="RightRepeatButtonTemplate">
+                                        <Grid x:Name="RootElement" Height="14" Background="Transparent" IsHitTestVisible="True" Opacity="0" />
+                                    </ControlTemplate>
+                                </Grid.Resources>
+
+                                <!-- Horizontal Template -->
+                                <Grid x:Name="HorizontalTemplateElement">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Track Layer -->
+                                    <Rectangle Stroke="Silver" StrokeThickness="0.5" Grid.Column="0" 
+                                               Grid.ColumnSpan="3" Height="14" RadiusX="4" RadiusY="4" Margin="0,0,0,0">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStop Color="#a5b8da" Offset="0.0" />
+                                                    <GradientStop Color="#a5b8da" Offset="0.25" />
+                                                    <GradientStop Color="#7089b3" Offset="0.75" />
+                                                    <GradientStop Color="#7089b3" Offset="1.0" />
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                            <!--<LinearGradientBrush x:Key="ButtonBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+                                                <GradientStop Color="#a5b8da" Offset="0.0" />
+                                                <GradientStop Color="#a5b8da" Offset="0.25" />
+                                                <GradientStop Color="#7089b3" Offset="0.75" />
+                                                <GradientStop Color="#7089b3" Offset="1.0" />
+                                            </LinearGradientBrush>-->
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+
+                                    <!-- Repeat Buttons + Thumb -->
+                                    <RepeatButton x:Name="HorizontalTrackLargeChangeDecreaseRepeatButtonElement" Grid.Column="0" IsTabStop="False" Template="{StaticResource LeftRepeatButtonTemplate}" />
+                                    <Thumb Width="8" x:Name="HorizontalThumbElement" Grid.Column="1" Background="DarkGray">
+                                        
+                                    </Thumb>
+                                    <RepeatButton x:Name="HorizontalTrackLargeChangeIncreaseRepeatButtonElement" Grid.Column="2" IsTabStop="False" Template="{StaticResource RightRepeatButtonTemplate}"/>
+                                </Grid>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--<Style TargetType="{x:Type ListViewItem}" x:Key="ListViewItemStyle">
+                <Setter Property="FocusVisualStyle" Value="{StaticResource ListViewItemFocusVisual}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Padding" Value="5,2,5,2" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="Height" Value="23px" />
+                <Setter Property="Foreground" Value="{StaticResource OutsideFontColor}"/>
+                <Style.Triggers>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                        <Setter Property="Background" Value="White" />
+                    </Trigger>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                        <Setter Property="Background" Value="AliceBlue" />
+                        <Setter Property="BorderBrush" Value="AliceBlue" />
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="{StaticResource BtnOverFill}" />
+                        <Setter Property="BorderBrush" Value="{StaticResource selectedStroke}" />
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="#FFbbe9fd" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>-->
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    
+
+    <Border Background="#a5b8da" CornerRadius="5" BorderBrush="#d1d1d1" BorderThickness="2,0,2,2"  >
+        <Grid Drop="Media_Drop" AllowDrop="True">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="25" />-->
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Background="#d1d1d1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              CornerRadius="5,5,0,0" Margin="-1,0,-1,0" MouseLeftButtonDown="DragWindow">
+                <Grid>
+                   
+                    <!--<TextBlock Foreground="White" FontWeight="Bold" VerticalAlignment="Center" Margin="10,2,10,2"
+            Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=Title}"/>
+                    <Button Content="_" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="7"
+                  Width="15" Height="15" Padding="0" Command="ApplicationCommands.Close"/>-->
+                    <!--<TextBlock Foreground="White" FontWeight="Bold" VerticalAlignment="Center" Margin="10,2,10,2"
+            Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=Title}"/>-->
+                    <Button Content="_" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="25" FontSize="7"
+                  Width="15" Height="15" Padding="0" />
+                    <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="7"
+                  Width="15" Height="15" Padding="0" Command="ApplicationCommands.Close"/>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68" ></RowDefinition>
+                <RowDefinition Height="20" ></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="23"></RowDefinition>
+            </Grid.RowDefinitions>
+                <Grid Grid.Row="1" Background="#708090" >
+                    <DockPanel MouseLeftButtonDown="DragWindow">
+                        <Menu DockPanel.Dock="Top"  Background="#708090"  BorderThickness="0">
+                            <Menu.BitmapEffect>
+                                <DropShadowBitmapEffect />
+                            </Menu.BitmapEffect>
+                            <MenuItem Header="_Menu">
+                                <MenuItem Header="_New">
+                                    <MenuItem Header="_Playlist"></MenuItem>
+                                </MenuItem>
+                                <MenuItem Header="_Add File to Library"/>
+                                <MenuItem Header="_Add Folder to Library" Name="mnuAddFolderToLibrary" Click="mnuAddFolderToLibrary_Click" />
+                                <MenuItem Header="_Library">
+                                    <MenuItem Header="_Clean Library" Name="mnuCleanLibrary" Click="mnuCleanLibrary_Click"></MenuItem>
+                                    <MenuItem Header="_Organise Library"></MenuItem>
+                                    <MenuItem Header="_Get Tag Infomation"></MenuItem>
+                                    <MenuItem Header="_Export Playlist"></MenuItem>
+                                    <MenuItem Header="_Import Playlist"></MenuItem>
+                                </MenuItem>
+                                <MenuItem Header="_New">
+                                    <MenuItem Header="_Sync"></MenuItem>
+                                    <MenuItem Header="_Backup"></MenuItem>
+                                </MenuItem>
+                                <MenuItem Header="_Preferences"/>
+                                <MenuItem Header="_Exit"/>
+                            </MenuItem>
+                            <MenuItem Header="_Help">
+                                <MenuItem Header="_About"></MenuItem>
+                            </MenuItem>
+                        </Menu>
+                        <StackPanel></StackPanel>
+                    </DockPanel>
+
+                   
+            </Grid>
+                <Grid Grid.Row="0" Background="#B3B3B3" Drop="Media_Drop" AllowDrop="True"> <!--="#FF3B6AA0">-->                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="35"></ColumnDefinition>
+                    <ColumnDefinition Width="110"></ColumnDefinition>
+                    <ColumnDefinition MinWidth="250"></ColumnDefinition>
+                    <ColumnDefinition Width="45"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <!--<Rectangle Grid.ColumnSpan="7">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#6e869e" Offset="0.0" />
+                                <GradientStop Color="#5b7289" Offset="0.25" />
+                                <GradientStop Color="#455667" Offset="0.75" /> 
+                                <GradientStop Color="#334455" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>-->
+
+                    <Rectangle Grid.ColumnSpan="7">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#eeeeee" Offset="0.0" />
+                                <GradientStop Color="#eeeeee" Offset="0.25" />
+                                <GradientStop Color="#dddddd" Offset="0.75" />
+                                <GradientStop Color="#dddddd" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                    <Border  BorderBrush="#a5b8da" Grid.ColumnSpan="7" BorderThickness="1"></Border>
+                <!--<Button Grid.Column="0" Background="Transparent" Height="28" Name="btnPrevious" Width="28">-->  <!--Style="{StaticResource SimpleButtonStyle}">-->
+                    <Image  Width="30" Name="imgPlayPrevious" Height="30" Grid.Column="0" Source="./Images/Previous-Track.png"
+                            Stretch="Fill" HorizontalAlignment="Center" MouseLeftButtonUp="imgPlayPrevious_MouseLeftButtonUp" 
+                            Style="{StaticResource ScaleStyle}"/>
+                <!--</Button>-->
+                <!--<Button Grid.Column="1" Background="Transparent" Height="35" Name="btnPlay" Width="35" Click="btnPlay_Click">--><!--Style="{StaticResource SimpleButtonStyle}"-->
+                    <Image Grid.Column="1" Name="imgPlay" Width="35" Height="35" Source="./Images/Play.png"
+                           MouseLeftButtonUp="btnPlay_Click" Stretch="Fill" HorizontalAlignment="Center" 
+                           Style="{StaticResource ScaleStyle}"/>
+                <!--</Button>-->
+                <!--<Button Grid.Column="2" Background="Transparent" Height="28" Name="btnNext" Width="28" >--> <!--Style="{StaticResource SimpleButtonStyle}">-->
+                    <Image  Width="30" Height="30" Name="imgPlayNext" Grid.Column="2" Source="./Images/Next-Track.png" 
+                            Style="{StaticResource ScaleStyle}" Stretch="Fill" HorizontalAlignment="Center" 
+                            MouseLeftButtonUp="imgPlayNext_MouseLeftButtonUp" />
+                <!--</Button>-->
+                
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="20.5"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+<!--Margin="0,10,0,0"-->
+                        <Slider  Grid.Row="1" Grid.Column="0" Margin="5,15,5,-5" 
+                             RenderTransformOrigin="0.501,0.622" x:Name="sldrVolume"  
+                             Height="6" Maximum="100" Minimum="0" Value="0" 
+                             ValueChanged="sldrVolume_ValueChanged" Style="{StaticResource MyCustomStyleForSlider}">
+                        <Slider.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                                <SkewTransform AngleX="0" AngleY="0"/>
+                                <RotateTransform Angle="179.863"/>
+                                <TranslateTransform X="-0.954" Y="-9.028"/>
+                            </TransformGroup>
+                        </Slider.RenderTransform>
+                        <Slider.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#a5b8da" Offset="0.0" />
+                                    <GradientStop Color="#a5b8da" Offset="0.25" />
+                                    <GradientStop Color="#7089b3" Offset="0.75" />
+                                    <GradientStop Color="#7089b3" Offset="1.0" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Slider.Background>
+                    </Slider>
+                    <Label Name="lblVolume" Grid.Row="1" Grid.Column="1" FontSize="10" Margin="-5,0,0,0" VerticalContentAlignment="Top" HorizontalAlignment="Left">50</Label>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--<Button  Grid.Column="0" Name="btnMute" Click="btnMute_Click">-->
+                        <Image Grid.Column="0" Width="25" Name="imgMute" Height="25" Source="./Images/Volume-Mute.png" 
+                               Stretch="Fill" HorizontalAlignment="Center"  MouseLeftButtonDown="imgMute_MouseLeftButtonDown" 
+                               Style="{StaticResource ScaleStyle}"/>
+                        <!--</Button>-->
+                        <!--<Button Grid.Column="1" Name="btnRepeat" Click="Button_Click" KeyUp="btnRepeat_KeyUp">-->
+                        <Image Grid.Column="1" Name="imgRepeat" Width="20" Height="20" Source="./Images/arrow-repeat.png" 
+                               Stretch="Fill" HorizontalAlignment="Center"  MouseLeftButtonUp="imgRepeat_MouseLeftButtonUp" 
+                               Style="{StaticResource ScaleStyle}"/>
+                        <!--</Button>-->
+                        <Image Grid.Column="2" Name="imgShuffle" Width="20" Height="20" Source="/Movie%20Cleanup;component/bin/Debug/Images/Button_Shuffle.png" 
+                               Stretch="Fill" HorizontalAlignment="Center" Style="{StaticResource ScaleStyle}"/>
+                        <!--<Image Grid.Column="1" Name="imgRepeat" Width="15" Height="15" Source="./Images/arrow-repeat.png" Stretch="Fill" HorizontalAlignment="Center" ImageFailed="Image_ImageFailed" KeyUp="imgRepeat_KeyUp" />-->
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="4">
+                        <Border Background="#E6E8FA" Grid.Column="6"  CornerRadius="10" BorderThickness="2" BorderBrush="#7089b3" >
+
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition Height="23"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <!--<Rectangle Margin="4,2,2,0">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#334455" Offset="0.0" />
+                                        <GradientStop Color="#a5b8da" Offset="0.25" />
+                                        <GradientStop Color="#d1d1d1" Offset="0.75" />
+                                        <GradientStop Color="#d1d1d1" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>-->
+                            <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Image Grid.Column="0" Name="imgAlbumArt" Margin="6,4,0,0" Source="/Movie%20Cleanup;component/bin/Debug/Images/Default%20Album%20Art.jpg" Stretch="Fill" HorizontalAlignment="Stretch" />
+                                <!--Margin="1,0,8,3" />-->
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="23"></RowDefinition>
+                                    <RowDefinition Height="23"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                        <Label  Grid.Row="0"  Name="lblArtist" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10" FontFamily="sans-serif"></Label>
+                                <!--<Label  Grid.Row="0" Name="lblTitle" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="11"></Label>-->
+                                        <Label Grid.Row="1" Name="lblAlbum" FontSize="10" FontFamily="sans-serif"></Label>
+                            </Grid>
+                                    <Image  Grid.Column="2" Name="imageControl" Stretch="Fill" HorizontalAlignment="Stretch" />
+                                    <!--gif:ImageBehavior.RepeatBehavior="3x"
+               gif:ImageBehavior.AnimatedSource="Images/animated.gif"-->
+                                </Grid>
+                            <!--<Slider Grid.Row="1" Name="CusomSlider" Style="{StaticResource MyCustomStyleForSlider}" Height="25"  />-->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Name="lblDuration" FontSize="9" FontFamily="sans-serif"></Label>
+                            <Slider  Grid.Column="1" Margin="5,15,5,-5" RenderTransformOrigin="0.501,0.622" x:Name="seekBar" 
+                                     Thumb.DragCompleted="Slider_DragCompleted" Thumb.DragStarted="Slider_DragStarted"
+                                     Height="6" Maximum="100" Minimum="0" Value="0" 
+                                     ValueChanged="seekBar_ValueChanged" Style="{StaticResource MyCustomStyleForSlider}">
+                                        <!--Style="{StaticResource SliderThumbStyle}"-->
+                                        <!--ValueChanged="seekBar_ValueChanged">-->
+
+                                <Slider.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                                        <SkewTransform AngleX="0" AngleY="0"/>
+                                        <RotateTransform Angle="179.863"/>
+                                        <TranslateTransform X="-0.954" Y="-9.028"/>
+                                    </TransformGroup>
+                                </Slider.RenderTransform>
+                                <Slider.Background>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="#a5b8da" Offset="0.0" />
+                                            <GradientStop Color="#a5b8da" Offset="0.25" />
+                                            <GradientStop Color="#7089b3" Offset="0.75" />
+                                            <GradientStop Color="#7089b3" Offset="1.0" />
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                    <!--<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#a5b8da" Offset="0"/>
+                                        <GradientStop Color="#d1d1d1" Offset="1"/>
+                                    </LinearGradientBrush>-->
+                                </Slider.Background>
+
+                            </Slider>
+
+                            <Label Grid.Column="2" Name="lblElapsed" FontSize="9"></Label>
+                        </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <Label Grid.Column="5" Margin="0,18,0,0">Search</Label>
+                <Border Margin="3,20,5,22" Grid.Column="6" Background="White" CornerRadius="15" BorderThickness="1.5" BorderBrush="#a5b8da" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Width="14" Height="14" Source="./Images/Search%20Icon.jpg" Stretch="Fill" HorizontalAlignment="Center" /> <!--Margin="1,0,8,3" />-->
+                        <TextBox Grid.Column="1" Background="Transparent" Margin="0,0,8,3"  BorderThickness="0" Height="30" Name="txtContents" BorderBrush="Transparent" TextChanged="txtContents_TextChanged" />
+
+                    </Grid>
+                    </Border>
+                <!--<TextBox  Height="25" Margin="3,3,3,3" ></TextBox>-->
+                
+            </Grid>
+            <Grid Grid.Row="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"></ColumnDefinition>
+                        <!--<ColumnDefinition Width="5"></ColumnDefinition>-->
+                        <ColumnDefinition Width="600*"></ColumnDefinition>
+                        <!--<ColumnDefinition Width="5"></ColumnDefinition>-->
+                        <ColumnDefinition Width="280*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Background="#d1d1d1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" ></RowDefinition>
+                        <RowDefinition Height="180"></RowDefinition>
+                        <RowDefinition Height="25" ></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="25" ></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                            <RowDefinition Height="22" ></RowDefinition>
+                    </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Background="#E6E6FA" Margin="0">
+                            <!--<Rectangle Margin="0" >
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#d1d1d1" Offset="0.0" />
+                                    <GradientStop Color="#d1d1d1" Offset="0.25" />
+                                    <GradientStop Color="#d1d1d1" Offset="0.75" />
+                                    <GradientStop Color="#d1d1d1" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>-->
+                            <Label Foreground="SteelBlue" FontWeight="SemiBold" Margin="0">Library</Label>
+                    </Grid>
+                        <Grid Grid.Row="1" Background="#E6E8FA" Margin="0">
+                            <ListBox Name="lstbxCategories" BorderBrush="#E6E8FA"  Background="#E6E8FA" Margin="0,-2,0,-2">
+                                <ListBoxItem Name="lstbxtmMusic" Selected="lstbxtmMusic_Selected" Background="#E6E6FA" Margin="-2,-1,-2,-1">
+                                    <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Width="25" Height="25" Name="imgMusicCategory" Source="./Images/Music.png" Stretch="Fill" HorizontalAlignment="Center" />
+                                    <Label Grid.Column="1" >Music</Label>
+                                </Grid>
+                            </ListBoxItem>
+                                <ListBoxItem Name="lstbxtmVideo" Selected="lstbxtmVideo_Selected"  Margin="-2,-1,-2,-1">
+                                    <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Width="20" Height="20" Name="imgVideoCategory" Source="./Images/Video.png" Stretch="Fill" HorizontalAlignment="Center" />
+                                    <Label Grid.Column="1" >Video</Label>
+                                </Grid>
+                            </ListBoxItem>
+                                <ListBoxItem  Margin="-2,-1,-2,-1">
+                                    <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Width="20" Height="20" Name="imgBookCategory" Source="./Images/Blue Documents.png" Stretch="Fill" HorizontalAlignment="Center" />
+                                    <Label Grid.Column="1" >Books</Label>
+                                </Grid>
+                            </ListBoxItem >
+                                <ListBoxItem  Margin="-1,-1,-1,-1">
+                                    <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Width="20" Height="20" Name="imgKnowledgeCategory" Source="./Images/Blue Library.png" Stretch="Fill" HorizontalAlignment="Center" />
+                                    <Label Grid.Column="1" >Knowledge Base</Label>
+                                </Grid> 
+                            </ListBoxItem>
+                                <ListBoxItem  Margin="-1,-1,-1,-1">
+                                    <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Width="20" Height="20" Name="imgAppCategory" Source="./Images/Blue Applications.png" Stretch="Fill" HorizontalAlignment="Center" />
+                                    <Label Grid.Column="1" >Apps</Label>
+                                </Grid>
+                            </ListBoxItem>
+                                <ListBoxItem Margin="-1,-1,-1,-1">
+                                    <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0"  Width="20" Height="20" Name="imgDownloadCategory" Source="./Images/Blue Applications.png" Stretch="Fill" HorizontalAlignment="Center" />
+                                    <Label Grid.Column="1" >Software</Label>
+                                </Grid>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                        <Grid Grid.Row="2" Background="#E6E8FA">
+                            <!--<Rectangle Margin="0">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#d1d1d1" Offset="0.0" />
+                                        <GradientStop Color="#d1d1d1" Offset="0.25" />
+                                        <GradientStop Color="#d1d1d1" Offset="0.75" />
+                                        <GradientStop Color="#d1d1d1" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>-->
+                            <Label Foreground="SteelBlue" FontWeight="SemiBold" Margin="0">Devices</Label>
+                        </Grid>
+                        <Grid Grid.Row="3" Margin="0">
+                            <ListBox Name="lstbxDevices" BorderBrush="#E6E6FA"  Background="#E6E6FA" Margin="0"/>
+
+                        </Grid>
+                        <Grid Grid.Row="4" Background="#E6E6FA" Margin="0">
+                            <!--<Rectangle Margin="0">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#d1d1d1" Offset="0.0" />
+                                    <GradientStop Color="#d1d1d1" Offset="0.25" />
+                                    <GradientStop Color="#d1d1d1" Offset="0.75" />
+                                    <GradientStop Color="#d1d1d1" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>-->
+                            <Label  Foreground="SteelBlue" FontWeight="SemiBold" Margin="0">PlayLists</Label>
+                    </Grid>
+                        <Grid Grid.Row="5" Margin="0">
+                            <ListBox Name="lstbxPlayLists" BorderBrush="#E6E8FA"  Background="#E6E8FA" Margin="0,-5,0,-5" SelectionChanged="lstbxPlayLists_SelectionChanged" />
+                            
+                    </Grid>
+                        <Grid Grid.Row="6" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                            <Image  Grid.Column="0" Width="20" Height="20" Name="imgAddPlaylist" Source="./Images/Add Playlist.png" Stretch="Fill" HorizontalAlignment="Center" />
+                            <Image Grid.Column="1" Width="20" Height="20" Name="imgExportPlaylist" Source="./Images/Import_light.png" Stretch="Fill" HorizontalAlignment="Center" />
+                            <!--<Button Grid.Column="0" Height="28" Name="button2" Width="28">
+                                <Image  Grid.Column="0" Width="20" Height="20" Name="imgAddPlaylist" Source="./Images/Add Playlist.png" Stretch="Fill" HorizontalAlignment="Center" />
+                        </Button>
+                        <Button Grid.Column="1" Height="28" Name="button3" Width="28">
+                                <Image Grid.Column="1" Width="20" Height="20" Name="imgExportPlaylist" Source="./Images/Import_light.png" Stretch="Fill" HorizontalAlignment="Center" />
+                        </Button>-->
+                    </Grid>
+                    <!--<TreeView Name="trvwCategories"/>-->
+                </Grid>
+                <!--<ScrollViewer Grid.Column="1" Name="scrllvwrLibraryview"  />-->
+                    <Popup x:Name="PopupTest" AllowsTransparency="True" PopupAnimation="Fade" >
+                        <!--<Viewbox>
+                            <Border  Background="#a5b8da" CornerRadius="8" BorderBrush="{StaticResource WindowFrameBrush}" BorderThickness="4,4,4,4" >
+                                <Grid Background="#d1d1d1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="25"></RowDefinition>
+                                            <RowDefinition Height="215"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Border Background="{StaticResource WindowFrameBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              CornerRadius="5,5,0,0" Margin="-1,0,-1,0" MouseLeftButtonDown="DragWindow">
+                                            <Grid>
+                                                <Button Name="btnClosePopUp" Width="15" Height="15"  Content="X" HorizontalAlignment="Left" FontWeight="Bold" Click="btnClosePopUp_Click"></Button>
+                                                
+                                            </Grid>
+                                        </Border>
+                                        <Grid Grid.Row="1">
+                                            <ListView Name="lstvwAlbumTracks" BorderThickness="0" ItemsSource="{Binding Tracks}" MouseDoubleClick="lstvwAlbumTracks_MouseDoubleClick">
+                                                <ListView.View >
+                                                    <GridView>
+                                                        <GridViewColumn Width="30">
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Image Height="20" Width="20"
+                       Source="{Binding PlayImageButton}" />
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+                                                        <GridViewColumn Width="30">
+                                                            <GridViewColumn.CellTemplate>
+                                                                <DataTemplate>
+                                                                    <Image Height="20" Width="20"
+                       Source="{Binding AddToPlaylistImageButton}" />
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+                                                        <GridViewColumn Header="#" Width="30" DisplayMemberBinding="{Binding Track}"/>
+                                                        <GridViewColumn Header="Title" Width="200" DisplayMemberBinding="{Binding Title}"/>
+                                                        <GridViewColumn Header="Length" Width="100" DisplayMemberBinding="{Binding Length}"/>
+                                                        <GridViewColumn Header="Genre" Width="100" DisplayMemberBinding="{Binding Genre}"/>
+                                                    </GridView>
+                                                </ListView.View>
+                                                <ListView.GroupStyle>
+                                                    <GroupStyle>
+                                                        <GroupStyle.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock FontWeight="Bold" FontSize="14" Text="{Binding Artist}"/>
+                                                            </DataTemplate>
+                                                        </GroupStyle.HeaderTemplate>
+                                                    </GroupStyle>
+                                                </ListView.GroupStyle>
+                                            </ListView>
+                                        </Grid>
+                                    </Grid>
+                                 
+                                    
+                                </Grid>
+                            </Border>
+                        </Viewbox>-->
+                </Popup>
+                    <!--<GridSplitter  Grid.Column="1" HorizontalAlignment="Right"  Name="rootLeftSplitter" VerticalAlignment="Stretch" Width="6" />-->
+                    <Grid Grid.Column="1" Background="#E6E6FA">
+                        <TabControl BorderThickness="0" >
+                        <TabControl.Resources>
+                                <Style TargetType="TabPanel">
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    
+                                </Style>
+                                <Style TargetType="TabItem">
+                                    
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TabItem">
+                                            <Border Name="Border" BorderThickness="3,1,3,0" BorderBrush="Gainsboro" CornerRadius="12,12,0,0" Margin="2,0">
+                                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="False">
+                                                    <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TabControl.Resources>
+                            <TabItem Header="Artists" Name="tbArtists" HorizontalAlignment="Center" BorderThickness="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200*" ></ColumnDefinition>
+                                    <!--<ColumnDefinition Width="6"></ColumnDefinition>-->
+                                        <ColumnDefinition Width="500*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                    <ListBox  Name="lstvwArtistView" Grid.Column="0" BorderThickness="0" BorderBrush="{x:Null}"
+                                          IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Stretch" 
+                                          SelectionChanged="lstvwArtistView_SelectionChanged" />
+<GridSplitter Background="LightGray" Grid.Column="0" HorizontalAlignment="Right"   VerticalAlignment="Stretch" Width="2" />
+
+                                    <ScrollViewer Grid.Column="1" Opacity="1" x:Name="ScrollViewer" 
+                                                  BorderThickness="0" BorderBrush="{x:Null}" CanContentScroll="True" PanningMode="HorizontalOnly" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Visible"><!--VerticalScrollBarVisibility="Hidden"-->
+                                        <!--<ScrollViewer.OpacityMask>
+                                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                                <LinearGradientBrush.RelativeTransform>
+                                                    <TransformGroup>
+                                                        <TranslateTransform X="-0.5" Y="-0.5"/>
+                                                        <ScaleTransform ScaleX="1.0141371299213975" ScaleY="1.0141371299213975"/>
+                                                        <SkewTransform AngleX="0" AngleY="0"/>
+                                                        <RotateTransform Angle="-89.602136078970744"/>
+                                                        <TranslateTransform X="0.5" Y="0.5"/>
+                                                        <TranslateTransform X="-0.010563229438366996" Y="0.0035211220837406574"/>
+                                                    </TransformGroup>
+                                                </LinearGradientBrush.RelativeTransform>
+                                                <GradientStop Offset="0.48717948717948717" Color="#FF000000"/>
+                                                <GradientStop Offset="1" Color="sc#0, 1, 1, 1"/>
+                                                <GradientStop Offset="0" Color="sc#0, 1, 1, 1"/>
+                                                <GradientStop Offset="0.85897435897435892" Color="#FF000000"/>
+                                                <GradientStop Offset="0.14102564102564102" Color="#FF000000"/>
+                                            </LinearGradientBrush>
+                                        </ScrollViewer.OpacityMask>-->
+                                        <!--HorizontalAlignment="Stretch" VerticalAlignment="Center" -->
+                                        <StackPanel Name="lstvwLibraryView" Width="Auto" Height="Auto"  ClipToBounds="True" CanVerticallyScroll="True" CanHorizontallyScroll="True" Margin="0,0,0,0">
+                                            
+                                        </StackPanel>
+                                    </ScrollViewer>
+
+                                    <!--<ListBox Grid.Column="1" Name="lstvwLibraryView1" BorderThickness="0" BorderBrush="{x:Null}" IsSynchronizedWithCurrentItem="True">
+                                        <ListBox.ContextMenu>
+                                                <ContextMenu>
+                                                    <MenuItem Header="Menu item 1" />
+                                                    <MenuItem Header="Menu item 2" />
+                                                    <Separator />
+                                                    <MenuItem Header="Menu item 3" />
+                                                </ContextMenu>                                            
+                                        </ListBox.ContextMenu>
+                                    </ListBox>-->
+
+                                </Grid>
+                                
+                        </TabItem>
+                            <TabItem Header="Albums" x:Name="tbAlbums" BorderThickness="0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition x:Name="rowAlbumTracks" Height="0" MaxHeight="230" MinHeight="0"></RowDefinition>
+                                    </Grid.RowDefinitions>                                   
+
+                                    <ListView Grid.Row="0" Name="lstvwAllLibraryView" BorderThickness="0" 
+                                      BorderBrush="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      SelectionChanged="lstvwAllLibraryView_SelectionChanged" IsSynchronizedWithCurrentItem="True"
+                                              ItemContainerStyle="{StaticResource alternatingStyle}" AlternationCount="2">
+                                        <ListView.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                            </ItemsPanelTemplate>
+                                        </ListView.ItemsPanel>
+                                    </ListView>
+                                    <Border Grid.Row="1" Background="#d1d1d1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              CornerRadius="2,2,0,0"  MouseLeftButtonDown="DragWindow" BorderThickness="1" BorderBrush="#d1d1d1">
+                                        <Grid Grid.Row="1">
+                                            <!--<ListBox Grid.Column="1" Name="lstvwLibraryViewFiltered" BorderThickness="0" BorderBrush="{x:Null}" />-->
+                                            <Grid.RenderTransform>
+                                                <TranslateTransform />
+                                            </Grid.RenderTransform>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="25"></RowDefinition>
+                                                    <RowDefinition Height="230"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Border Grid.Row="0" Background="#d1d1d1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              CornerRadius="2,2,0,0" Margin="1,0,1,0" MouseLeftButtonDown="DragWindow" BorderThickness="1">
+                                                    <Grid>
+                                                        <Button Name="btnClosePopUp" Width="15" Height="15"  Content="X" HorizontalAlignment="Left" FontWeight="Bold" FontSize="9" Click="btnClosePopUp_Click">
+                                                            <!--<Button.Triggers>
+                                                            <EventTrigger RoutedEvent="Button.Click">
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <mymod:GridLengthAnimation
+              Storyboard.TargetName="rowAlbumTracks"
+              Storyboard.TargetProperty="Height"
+              From="220" To="0" Duration="0:0:2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </EventTrigger>-->
+                                                            <!--<EventTrigger RoutedEvent="Button.Click">
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation
+          Storyboard.TargetName="rowAlbumTracks"
+          Storyboard.TargetProperty="Height"
+          From="220" To="0" Duration="0:0:2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </EventTrigger>-->
+                                                            <!--</Button.Triggers>-->
+                                                        </Button>
+
+                                                    </Grid>
+                                                </Border>
+                                                <Grid Grid.Row="1">
+                                                    <my:AlbumViewControl x:Name="albvwcntrlAlbumDetails"></my:AlbumViewControl>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                                    
+
+                            </TabItem>
+                            <TabItem Header="Videos" Name="tbVideos" BorderThickness="0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <!--<RowDefinition></RowDefinition>-->
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <ListView Name="lstvwVideoLibraryView" BorderThickness="0" 
+                                      BorderBrush="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                       IsSynchronizedWithCurrentItem="True"
+                                              ItemContainerStyle="{StaticResource alternatingStyle}" AlternationCount="2" MouseDoubleClick="lstvwVideoLibraryView_MouseDoubleClick">
+                                        <ListView.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel Orientation="Horizontal"></WrapPanel>
+                                            </ItemsPanelTemplate>
+                                        </ListView.ItemsPanel>
+                                    </ListView>
+                                </Grid>
+                            </TabItem> <!--"lstvwPlayList_MouseDoubleClick"-->
+                            <TabItem Header="Playlist"  Name="tbPlaylist" HorizontalAlignment="Center" BorderThickness="0">
+                                
+                                <ListView Name="lstvwPlayListViewer" Grid.Row="4" BorderThickness="0" MouseDoubleClick="lstvwPlayListViewer_MouseDoubleClick"
+                                      FontSize="11" FontFamily="Lucida Sans Unicode" IsSynchronizedWithCurrentItem="True" 
+                                  SelectionChanged="lstvwPlayList_SelectionChanged" Drop="Media_Drop" AllowDrop="True"
+                                  ItemContainerStyle="{StaticResource alternatingStyle}" AlternationCount="2">
+                                    <ListView.ContextMenu>
+                                        <ContextMenu Name="ZoneInformationList1" StaysOpen="true" Background="WhiteSmoke">
+                                            <ContextMenu.BitmapEffect>
+                                                <BitmapEffectGroup/>
+                                            </ContextMenu.BitmapEffect>
+                                            <MenuItem Header="Open Containing Folder" Name="OpenContainingFolderContextMenu1"  Click="OpenContainingFolderContextMenu_OnClick"/>
+                                            <!--<MenuItem Header="Get Tag-Info" Name="GetTagInfoContextMenu" Click="GetTagInfoContextMenuContextMenu_OnClick"/>-->
+                                        </ContextMenu>
+                                    </ListView.ContextMenu>
+
+                                    <ListView.View >
+                                        <GridView>
+                                            <GridViewColumn Width="30">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Image Height="20" Width="20"
+                       Source="{Binding PlayImageButton}" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="#" Width="30" DisplayMemberBinding="{Binding Track}"/>
+                                            <GridViewColumn Header="Title" Width="150" DisplayMemberBinding="{Binding Title}"/>
+                                            <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Album}"/>
+                                            <GridViewColumn Header="Time" Width="100" DisplayMemberBinding="{Binding Length}"/>
+                                            <GridViewColumn Header="Genre" Width="100" DisplayMemberBinding="{Binding Genre}"/>
+                                            <GridViewColumn Header="Year" Width="100" DisplayMemberBinding="{Binding Year}"/>
+                                            <GridViewColumn Header="Rating" Width="100" DisplayMemberBinding="{Binding Rating}"/>
+                                            <GridViewColumn Header="Path" Width="100" DisplayMemberBinding="{Binding Location}"/>
+                                        </GridView>
+                                    </ListView.View>
+                                    <ListView.GroupStyle>
+                                        <GroupStyle>
+                                            <GroupStyle.HeaderTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock FontWeight="Bold" FontSize="14" Text="{Binding Artist}"/>
+                                                </DataTemplate>
+                                            </GroupStyle.HeaderTemplate>
+                                        </GroupStyle>
+                                    </ListView.GroupStyle>
+                                </ListView>
+
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                    <GridSplitter Background="LightGray" Grid.Column="1" HorizontalAlignment="Right"  Name="mainLeftSplitter" VerticalAlignment="Stretch" Width="1" />
+                    <!--<GridSplitter  Grid.Column="3" HorizontalAlignment="Right"  Name="rootRightSplitter" VerticalAlignment="Stretch" Width="6" />-->
+
+                    <Grid Grid.Column="2" Background="White" Drop="Media_Drop" AllowDrop="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"></RowDefinition>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="120"></RowDefinition>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="0" Name="videoGrid"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Background="#E6E6FA" >
+                            <!--<Image Name="imgSaveCategory" Height="20" Width="20" />-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25"></ColumnDefinition>
+                                <ColumnDefinition Width="25"></ColumnDefinition>
+                                <ColumnDefinition Width="25"></ColumnDefinition>
+                                <ColumnDefinition Width="25"></ColumnDefinition>
+                                <ColumnDefinition Width="25"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="imgSave" Margin="3" Grid.Column="0" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{StaticResource ScaleStyle}" Source="/Movie%20Cleanup;component/bin/Debug/Images/Floppy.ico" />
+                            <Image x:Name="imgLoad" Margin="3" Grid.Column="1" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{StaticResource ScaleStyle}" Source="/Movie%20Cleanup;component/bin/Debug/Images/folder_128x128.png" />
+                            <Image x:Name="imgClear" Margin="3" Grid.Column="2" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{StaticResource ScaleStyle}" Source="/Movie%20Cleanup;component/bin/Debug/Images/tasks_scheduled_folder_google-128.png" />
+                            <Image x:Name="img3D" Margin="3" Grid.Column="3" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{StaticResource ScaleStyle}" Source="/Movie%20Cleanup;component/bin/Debug/Images/add-folder-512.gif" />
+                            <Image x:Name="imgNormal" Margin="3" Grid.Column="4" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{StaticResource ScaleStyle}" Source="/Movie%20Cleanup;component/bin/Debug/Images/HDD%20-2.ico" />
+
+                            <!--<StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                                <Image x:Name="imgSave"   MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{DynamicResource PulseImage}"/>
+                                <Image x:Name="imgLoad" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{DynamicResource PulseImage}"/>
+                                <Image x:Name="imgClear" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{DynamicResource PulseImage}"/>
+                                <Image x:Name="img3D" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{DynamicResource PulseImage}"/>
+                                <Image x:Name="imgNormal" MouseDown="lblSave_MouseDown"  RenderTransformOrigin="0.5,0.5" ToolTip="Save" Style="{DynamicResource PulseImage}"/>-->
+                                <!--<Label x:Name="lblSave" MouseDown="lblSave_MouseDown" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="Transparent" Foreground="Blue" FontFamily="Wingdings" FontSize="19" BorderBrush="Transparent" Content="=" ToolTip="Save" Style="{DynamicResource PulseLabel}"/>
+                                <Label x:Name="lblLoad" MouseDown="lblLoad_MouseDown" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Background="Transparent" Foreground="Blue" FontFamily="Wingdings" FontSize="15" BorderBrush="Transparent" Content="1" ToolTip="Load" Style="{DynamicResource PulseLabel}"/>
+                                <Label x:Name="lblClear" MouseDown="lblClear_MouseDown" FontWeight="Bold"   RenderTransformOrigin="0.5,0.5" Background="Transparent" Foreground="Blue" FontFamily="Wingdings" FontSize="20" BorderBrush="Transparent" Content="û" ToolTip="Clear" Style="{DynamicResource PulseLabel}"/>
+                                <Label x:Name="lbl3D" MouseDown="lbl3D_MouseDown" FontWeight="Bold"  RenderTransformOrigin="0.5,0.5" Background="Transparent" Foreground="Blue" FontFamily="Wingdings" FontSize="14" BorderBrush="Transparent" Content="o" ToolTip="Use 3D Style Media Items" Style="{DynamicResource PulseLabel}"/>
+                                Label x:Name="lblNormal" MouseDown="lblNormal_MouseDown"  RenderTransformOrigin="0.5,0.5" Background="Transparent" Foreground="Blue" FontFamily="Wingdings" FontSize="16" BorderBrush="Transparent" Content="a" ToolTip="Use Flat Style Media Items" Style="{DynamicResource PulseLabel}"/>-->
+                            <!--</StackPanel>-->
+                        </Grid>
+                        <Label Content="Now Playing: " Grid.Row="1" Name="lblNowPlaying"  Background="#E6E6FA" FontSize="9" FontFamily="Arial"></Label>
+                        <StackPanel Grid.Row="2"  VerticalAlignment="Top">
+                            <Image Grid.Row="2" Height="90" Width="90" Name="imgCurrentlyPlayingAlbumArt" Margin="6,4,0,0" Source="/Movie%20Cleanup;component/bin/Debug/Images/Default%20Album%20Art.jpg" Stretch="Fill" HorizontalAlignment="Stretch" />
+                            <Rectangle Width="90" Height="90" Margin="6,12,0,0">
+                            <Rectangle.Fill>
+                                    <VisualBrush Visual="{Binding ElementName=imgCurrentlyPlayingAlbumArt}" />
+                            </Rectangle.Fill>
+                            <Rectangle.OpacityMask>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#AA000000" Offset="1" />
+                                    <GradientStop Color="#00000000" Offset="0" />
+                                </LinearGradientBrush>
+                            </Rectangle.OpacityMask>
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1" />
+                                    <TranslateTransform Y="80" />
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        </StackPanel>
+                        <!--<svl:SpectrumAnalyzer x:Name="spectrumAnalyzer" Grid.Row="1" />-->
+                        <!--<my:SpectrumAnalyzer x:Name="spectrumAnalyzer" VerticalAlignment="Top" Grid.Row="3"
+                      Height="10"
+                      HorizontalAlignment="Stretch" />--> 
+
+                        <!--VerticalAlignment="Stretch" />-->
+                        <!--BarSpacing="5"
+                      AveragePeaks="False"
+                      MinimumFrequency="20"
+                      MaximumFrequency="20000"
+                      BarCount="32"
+                      PeakFallDelay="10"
+                      BarHeightScaling="Decibel" />-->
+
+                        <ListView Name="lstvwPlayList" Grid.Row="4" BorderThickness="0" MouseDoubleClick="lstvwPlayList_MouseDoubleClick" 
+                                      FontSize="11" FontFamily="Lucida Sans Unicode" IsSynchronizedWithCurrentItem="True" 
+                                  SelectionChanged="lstvwPlayList_SelectionChanged" Drop="Media_Drop" AllowDrop="True"
+                                  ItemContainerStyle="{StaticResource alternatingStyle}" AlternationCount="2">
+                            <ListView.ContextMenu>
+                                <ContextMenu Name="ZoneInformationList" StaysOpen="true" Background="WhiteSmoke">
+                                    <ContextMenu.BitmapEffect>
+                                        <BitmapEffectGroup/>
+                                    </ContextMenu.BitmapEffect>
+                                    <MenuItem Header="Open Containing Folder" Name="OpenContainingFolderContextMenu"  Click="OpenContainingFolderContextMenu_OnClick"/>
+                                    <!--<MenuItem Header="Get Tag-Info" Name="GetTagInfoContextMenu" Click="GetTagInfoContextMenuContextMenu_OnClick"/>-->
+                                </ContextMenu>
+                            </ListView.ContextMenu>
+
+                            <ListView.View >
+                                <GridView>
+                                    <GridViewColumn Width="30">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Height="20" Width="20"
+                       Source="{Binding PlayImageButton}" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="#" Width="30" DisplayMemberBinding="{Binding Track}"/>
+                                    <GridViewColumn Header="Title" Width="110" DisplayMemberBinding="{Binding Title}"/>
+                                    <GridViewColumn Header="Time" Width="100" DisplayMemberBinding="{Binding Length}"/>
+                                </GridView>
+                            </ListView.View>
+                            <ListView.GroupStyle>
+                                <GroupStyle>
+                                    <GroupStyle.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock FontWeight="Bold" FontSize="14" Text="{Binding Artist}"/>
+                                        </DataTemplate>
+                                    </GroupStyle.HeaderTemplate>
+                                </GroupStyle>
+                            </ListView.GroupStyle>
+                        </ListView>
+                        <!--<Grid x:Name="axWmp" Grid.Row="5">
+                        <ax:WindowsMediaPlayer></ax:WindowsMediaPlayer>
+                        
+</Grid>-->
+
+                        <!--<Grid Name="videoGrid" Grid.Row="5">-->
+                            <wfi:WindowsFormsHost Name="formsHost" Grid.Row="5" Panel.ZIndex="200">
+                                <ax:AxWindowsMediaPlayer x:Name="axWmp"/>
+                            </wfi:WindowsFormsHost>
+                        <!--</Grid>-->
+                        <!--<MediaElement Name="VideoMediaControl"  Grid.Row="5">
+                        </MediaElement>-->
+                    </Grid>
+                </Grid>
+            <Grid Grid.Row="3" Background="#FF3B6AA0" >
+                <Rectangle>
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                <GradientStop Color="#d9dcdf" Offset="0.0" />
+                                <GradientStop Color="#d9dcdf" Offset="0.25" />
+                                <GradientStop Color="#BEBEBE" Offset="0.75" />
+                                <GradientStop Color="#BEBEBE" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Border BorderBrush="#a5b8da" BorderThickness="1">
+                        <Grid>
+                            <Label HorizontalAlignment="Center" Name="lblProcess" FontSize="9" VerticalAlignment="Top"  ></Label>
+                        </Grid>
+                    </Border>
+            </Grid>
+        </Grid>
+
+    </Grid>
+    </Border>
+</Window>

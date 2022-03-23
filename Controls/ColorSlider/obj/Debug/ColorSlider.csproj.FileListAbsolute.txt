@@ -1,0 +1,30 @@
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\bin\Debug\ColorSlider.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\bin\Debug\ColorSlider.pdb
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\MB.Controls.ColorSlider.resources
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResGen.read.1.tlog
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResGen.write.1.tlog
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.dll
+C:\Users\tzm0410\Documents\Visual Studio 2010\Projects\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\bin\Debug\ColorSlider.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\bin\Debug\ColorSlider.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResolveAssemblyReference.cache
+L:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\MB.Controls.ColorSlider.resources
+L:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResGen.read.1.tlog
+L:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResGen.write.1.tlog
+L:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.pdb
+I:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\bin\Debug\ColorSlider.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\bin\Debug\ColorSlider.pdb
+I:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\MB.Controls.ColorSlider.resources
+I:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.csproj.GenerateResource.Cache
+I:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.pdb
+M:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\bin\Debug\ColorSlider.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\bin\Debug\ColorSlider.pdb
+M:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResolveAssemblyReference.cache
+M:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\MB.Controls.ColorSlider.resources
+M:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResGen.read.1.tlog
+M:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ResGen.write.1.tlog
+M:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.dll
+M:\Movie Cleanup\Movie Cleanup\Controls\ColorSlider\obj\Debug\ColorSlider.pdb

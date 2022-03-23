@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Movie_Cleanup.Controls.MobileDeviceMediaBrowser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ScrollViewer Opacity="1" Margin="165,92,191,104" x:Name="ScrollViewer" VerticalScrollBarVisibility="Hidden">
+            <ScrollViewer.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <TranslateTransform X="-0.5" Y="-0.5"/>
+                            <ScaleTransform ScaleX="1.0141371299213975" ScaleY="1.0141371299213975"/>
+                            <SkewTransform AngleX="0" AngleY="0"/>
+                            <RotateTransform Angle="-89.602136078970744"/>
+                            <TranslateTransform X="0.5" Y="0.5"/>
+                            <TranslateTransform X="-0.010563229438366996" Y="0.0035211220837406574"/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Offset="0.48717948717948717" Color="#FF000000"/>
+                    <GradientStop Offset="1" Color="sc#0, 1, 1, 1"/>
+                    <GradientStop Offset="0" Color="sc#0, 1, 1, 1"/>
+                    <GradientStop Offset="0.85897435897435892" Color="#FF000000"/>
+                    <GradientStop Offset="0.14102564102564102" Color="#FF000000"/>
+                </LinearGradientBrush>
+            </ScrollViewer.OpacityMask>
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="Auto" Height="Auto" x:Name="StackPanel" ClipToBounds="True" CanVerticallyScroll="True" Margin="0,0,0,0">
+                <Button Height="38.106666666666" x:Name="Button_Copy3" Content="Expression"/>
+                <Button Height="38.106666666666" x:Name="Button_Copy4" Content="XAML"/>
+                <Button Height="38.106666666666" x:Name="Button_Copy5" Content="VB.NET"/>
+                <Button Height="38.106666666666" x:Name="Button_Copy6" Content="Microsoft"/>
+                <Button Height="38.106666666666" x:Name="Button" Content=".NET" Width="284"/>
+                <Button Height="38.106666666666" x:Name="Button_Copy" Content="C#"/>
+                <Button Height="38.106666666666" x:Name="Button_Copy1" Content="Web"/>
+                <Button Height="38.106666666666" x:Name="Button_Copy2" Content="2D/3D"/>
+                <Button Height="38.106666666666" x:Name="Button_Copy7" Content="Button"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

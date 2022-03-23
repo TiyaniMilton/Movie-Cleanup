@@ -1,0 +1,31 @@
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\MediaPlayer\bin\Debug\WmpFormsLib.dll
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\MediaPlayer\bin\Debug\WmpFormsLib.pdb
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\Interop.WMPLib.dll
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\WmpFormsLib.csproj.ResolveComReference.cache
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\WmpFormsLib.WmpControl.resources
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\WmpFormsLib.dll
+C:\Users\tzm0410\Downloads\WinMediaPlayer_Code\WinMediaPlayer_Code\WmpFormsLib\obj\Debug\WmpFormsLib.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\MediaPlayer\bin\Debug\WmpFormsLib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\MediaPlayer\bin\Debug\WmpFormsLib.pdb
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\ResolveAssemblyReference.cache
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\Interop.WMPLib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\AxInterop.WMPLib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.csproj.ResolveComReference.cache
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.WmpControl.resources
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\GenerateResource.read.1.tlog
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\GenerateResource.write.1.tlog
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.dll
+L:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.pdb
+I:\Movie Cleanup\Movie Cleanup\Controls\MediaPlayer\bin\Debug\WmpFormsLib.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\MediaPlayer\bin\Debug\WmpFormsLib.pdb
+I:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\Interop.WMPLib.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\AxInterop.WMPLib.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.csproj.ResolveComReference.cache
+I:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.WmpControl.resources
+I:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.csproj.GenerateResource.Cache
+I:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.dll
+I:\Movie Cleanup\Movie Cleanup\Controls\WmpFormsLib\obj\Debug\WmpFormsLib.pdb

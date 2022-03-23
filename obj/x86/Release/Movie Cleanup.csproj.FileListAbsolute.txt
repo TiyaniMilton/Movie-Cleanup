@@ -1,0 +1,54 @@
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\ResolveAssemblyReference.cache
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Interop.WMPLib.dll
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Movie Cleanup.csproj.ResolveComReference.cache
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\AlbumControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\AlbumViewControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\ArtistAlbumViewControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\PlaylistControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\SidePanelTab.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\UsbDeviceControl.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Resources\Styles.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Styles\SliderStyle.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Styles\ListBoxStyle.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Styles\ScrollBar.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\App.baml
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\AlbumControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\AlbumViewControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\ArtistAlbumViewControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\ArtistViewControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\PlaylistControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\SidePanelTab.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\UsbDeviceControl.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\MainWindow.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\App.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Movie Cleanup_Content.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Movie Cleanup_MarkupCompile.cache
+M:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Movie Cleanup_MarkupCompile.lref
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\ResolveAssemblyReference.cache
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Interop.WMPLib.dll
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Movie Cleanup.csproj.ResolveComReference.cache
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\AlbumControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\AlbumViewControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\ArtistAlbumViewControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\PlaylistControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\SidePanelTab.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\UsbDeviceControl.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Resources\Styles.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Styles\SliderStyle.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Styles\ListBoxStyle.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Styles\ScrollBar.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\App.baml
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\AlbumControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\AlbumViewControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\ArtistAlbumViewControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\ArtistViewControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\PlaylistControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\SidePanelTab.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Controls\UsbDeviceControl.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\MainWindow.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\App.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Movie Cleanup_Content.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Movie Cleanup_MarkupCompile.cache
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\Movie Cleanup_MarkupCompile.lref

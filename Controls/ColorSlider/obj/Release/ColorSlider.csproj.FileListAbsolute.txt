@@ -1,0 +1,8 @@
+C:\Users\tzm0410\Downloads\ColorSlider_src\ColorSlider\ColorSlider\bin\Release\ColorSlider.dll
+C:\Users\tzm0410\Downloads\ColorSlider_src\ColorSlider\ColorSlider\bin\Release\ColorSlider.pdb
+C:\Users\tzm0410\Downloads\ColorSlider_src\ColorSlider\ColorSlider\obj\Release\ResolveAssemblyReference.cache
+C:\Users\tzm0410\Downloads\ColorSlider_src\ColorSlider\ColorSlider\obj\Release\MB.Controls.ColorSlider.resources
+C:\Users\tzm0410\Downloads\ColorSlider_src\ColorSlider\ColorSlider\obj\Release\ResGen.read.1.tlog
+C:\Users\tzm0410\Downloads\ColorSlider_src\ColorSlider\ColorSlider\obj\Release\ResGen.write.1.tlog
+C:\Users\tzm0410\Downloads\ColorSlider_src\ColorSlider\ColorSlider\obj\Release\ColorSlider.dll
+C:\Users\tzm0410\Downloads\ColorSlider_src\ColorSlider\ColorSlider\obj\Release\ColorSlider.pdb

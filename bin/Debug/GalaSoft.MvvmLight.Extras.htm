@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8">
+  <title>
+  bitsbobsetc / SlidingSidePanel 
+  / source  / SlidingSidePanel / External / GalaSoft.MvvmLight.Extras.XML
+ &mdash; Bitbucket
+</title>
+  <link rel="icon" type="image/png" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/img/favicon.png">
+  <meta id="bb-canon-url" name="bb-canon-url" content="https://bitbucket.org">
+  
+  
+<link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/compressed/css/33d809ac1efd.css" type="text/css" />
+<link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/compressed/css/a28ac4337d1b.css" type="text/css" />
+
+  <!--[if lt IE 9]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/css/aui/aui-ie.css" media="all"><![endif]-->
+  <!--[if IE 9]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/css/aui/aui-ie9.css" media="all"><![endif]-->
+  <!--[if IE]><link rel="stylesheet" href="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/css/aui-overrides-ie.css" media="all"><![endif]-->
+  <meta name="description" content=""/>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Bitbucket" />
+  
+  
+    <link href="/bitsbobsetc/slidingsidepanel/rss" rel="alternate nofollow" type="application/rss+xml" title="RSS feed for SlidingSidePanel" />
+  
+
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+<body class="production "
+      data-base-url="https://bitbucket.org"
+      data-no-avatar-image="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/img/default_avatar/16/user_blue.png"
+      data-current-user="{&quot;isKbdShortcutsEnabled&quot;: true, &quot;isSshEnabled&quot;: false, &quot;isAuthenticated&quot;: false}"
+      
+       data-current-repo="{&quot;scm&quot;: &quot;hg&quot;, &quot;language&quot;: &quot;c#&quot;, &quot;id&quot;: 321103, &quot;readOnly&quot;: false, &quot;mainbranch&quot;: {&quot;name&quot;: &quot;default&quot;}, &quot;owner&quot;: {&quot;username&quot;: &quot;bitsbobsetc&quot;, &quot;isTeam&quot;: false}, &quot;pygmentsLanguage&quot;: &quot;c#&quot;, &quot;slug&quot;: &quot;slidingsidepanel&quot;}"
+       data-current-cset="613b229396f5a9b59f3a3923af57d280c0ffb404"
+      
+      
+      
+      >
+<script type="text/javascript" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/compressed/js/7a107bcc2ab3.js"></script>
+
+<div id="page">
+  <div id="wrapper">
+    
+  
+
+
+    <header id="header" role="banner">
+      
+  
+    
+  
+
+      <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+        <div class="aui-header-inner">
+          <div class="aui-header-primary">
+            
+  
+
+            
+              <h1 class="aui-header-logo aui-header-logo-bitbucket logged-out">
+                <a href="/" class="aui-nav-imagelink" id="logo-link">
+                  <span class="aui-header-logo-device">Bitbucket</span>
+                </a>
+              </h1>
+            
+            
+  <script id="repo-dropdown-template" type="text/html">
+  
+
+[[#hasViewed]]
+  <div class="aui-dropdown2-section">
+    <strong class="viewed">Recently viewed</strong>
+    <ul class="aui-list-truncate">
+      [[#viewed]]
+        <li class="[[#is_private]]private[[/is_private]][[^is_private]]public[[/is_private]] repository">
+          <a href="[[url]]" title="[[owner]]/[[name]]" class=" aui-icon-container">
+            <img class="repo-avatar size16" src="[[{avatar}]]" alt="[[owner]]/[[name]] avatar"/>
+            [[owner]] / [[name]]
+          </a>
+        </li>
+      [[/viewed]]
+    </ul>
+  </div>
+[[/hasViewed]]
+[[#hasUpdated]]
+<div class="aui-dropdown2-section">
+  <strong class="updated">Recently updated</strong>
+  <ul class="aui-list-truncate">
+    [[#updated]]
+    <li class="[[#is_private]]private[[/is_private]][[^is_private]]public[[/is_private]] repository">
+      <a href="[[url]]" title="[[owner]]/[[name]]" class=" aui-icon-container">
+        <img class="repo-avatar size16" src="[[{avatar}]]" alt="[[owner]]/[[name]] avatar"/>
+        [[owner]] / [[name]]
+      </a>
+    </li>
+    [[/updated]]
+  </ul>
+</div>
+[[/hasUpdated]]
+
+</script>
+  <ul role="menu" class="aui-nav">
+    
+      <li>
+        <a href="/plans">
+            Pricing
+        </a>
+      </li>
+      <li>
+        <a href="/whats-new">
+          Latest features
+        </a>
+      </li>
+    
+  </ul>
+
+          </div>
+          <div class="aui-header-secondary">
+            
+  <ul role="menu" class="aui-nav">
+    <li>
+      <form action="/repo/all" method="get" class="aui-quicksearch">
+        <label for="search-query" class="assistive">owner/repository</label>
+        <input id="search-query" class="search" type="text" placeholder="owner/repository" name="name">
+      </form>
+    </li>
+    <li>
+      <a class="aui-dropdown2-trigger" aria-controls="header-help-dropdown" aria-owns="header-help-dropdown"
+         aria-haspopup="true" data-container="#header .aui-header-inner" href="#header-help-dropdown">
+        <span class="aui-icon aui-icon-small aui-iconfont-help">Help</span><span class="aui-icon-dropdown"></span>
+      </a>
+      <nav id="header-help-dropdown" class="aui-dropdown2 aui-style-default aui-dropdown2-in-header" aria-hidden="true">
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li>
+              <a href="/whats-new" id="features-link">
+                Latest features
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li>
+              <a class="support-ga"
+                 data-support-gaq-page="DocumentationHome"
+                 href="https://confluence.atlassian.com/x/bgozDQ"
+                 target="_blank">
+                Documentation
+              </a>
+            </li>
+            <li>
+              <a class="support-ga"
+                 data-support-gaq-page="Documentation101"
+                 href="https://confluence.atlassian.com/x/cgozDQ"
+                 target="_blank">
+                Bitbucket 101
+              </a>
+            </li>
+            <li>
+              <a class="support-ga"
+                 data-support-gaq-page="DocumentationKB"
+                 href="https://confluence.atlassian.com/x/2w4zDQ"
+                 target="_blank">
+                Knowledge base
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li>
+              <a class="support-ga"
+                 data-support-gaq-page="Answers"
+                 href="https://answers.atlassian.com/tags/bitbucket/"
+                 target="_blank">
+                Bitbucket on Atlassian Answers
+              </a>
+            </li>
+            <li>
+              <a class="support-ga"
+                 data-support-gaq-page="Home"
+                 href="/support">
+              Support
+            </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </li>
+      
+        
+          <li>
+            <a class="aui-dropdown2-trigger" href="#header-language"
+              aria-controls="header-language" aria-owns="header-language"
+              aria-haspopup="true" data-container="#header .aui-header-inner">
+              <span>English</span></a>
+            <nav id="header-language" class="aui-dropdown2 aui-style-default aui-dropdown2-radio aui-dropdown2-in-header"
+                aria-hidden="true">
+              <form method="post" action="/account/language/setlang/">
+                <div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='Nz4gKdUlQ5Or3MQVRic4JOG88U0pNh9z' /></div>
+                <input type="hidden" name="language" value="">
+                <ul>
+                <li><a class="aui-dropdown2-radio interactive checked"
+                      data-value="en" href="#en">English</a></li>
+                
+                <li><a class="aui-dropdown2-radio interactive "
+                      data-value="ja" href="#ja">日本語</a></li>
+                </ul>
+              </form>
+            </nav>
+          </li>
+        
+      
+    
+        <li id="header-signup-button">
+          <a id="sign-up-link" class="aui-button aui-button-primary aui-style" href="/account/signup/">
+            Sign up
+          </a>
+        </li>
+      <li id="user-options">
+        
+          <a href="/account/signin/?next=/bitsbobsetc/slidingsidepanel/src/613b229396f5a9b59f3a3923af57d280c0ffb404/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML%3Fat%3Ddefault" class="aui-nav-link login-link">Log in</a>
+        
+      </li>
+    
+  </ul>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    
+  <header id="account-warning" role="banner"
+          class="aui-message-banner warning ">
+    <div class="center-content">
+      <span class="aui-icon aui-icon-warning"></span>
+      <span class="message">
+        
+      </span>
+    </div>
+  </header>
+
+    
+    
+      <header id="aui-message-bar">
+        
+      </header>
+    
+
+
+    
+  <header id="repo-warning" role="banner" class="aui-message-banner warning">
+    <div class="center-content">
+      <span class="aui-icon aui-icon-warning"></span>
+      <span class="message">
+      </span>
+    </div>
+  </header>
+  <script id="repo-warning-template" type="text/html">
+  
+
+
+
+
+  This repository's ownership is pending transfer to <a href="/[[username]]">[[username]]</a>.
+  Visit the <a href="/bitsbobsetc/slidingsidepanel/admin/transfer">transfer repository page</a> to view more details.
+
+
+</script>
+  <header id="repo-header" class="subhead row" data-modules="repo/index">
+    <div class="center-content">
+      <div class="repo-summary with-repo-watch">
+        <a class="repo-avatar-link" href="/bitsbobsetc/slidingsidepanel">
+          <span class="repo-avatar-container size64" title="bitsbobsetc/SlidingSidePanel">
+  <img alt="bitsbobsetc/SlidingSidePanel" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/img/language-avatars/c_sharp_64.png">
+</span>
+
+          
+        </a>
+        <h1><a class="repo-link" href="/bitsbobsetc/slidingsidepanel">SlidingSidePanel</a></h1>
+        <ul class="repo-metadata clearfix">
+          <li>
+            <a class="user" href="/bitsbobsetc">
+              <span class="aui-icon aui-icon-small aui-iconfont-user">User icon</span>
+              <span>bitsbobsetc</span>
+            </a>
+          </li>
+          
+          
+          
+        </ul>
+      </div>
+      <div id="repo-toolbar" class="bb-toolbar">
+        
+          <div class="aui-buttons">
+            <a id="repo-clone-button" class="aui-button"
+              href="https://bitbucket.org/bitsbobsetc/slidingsidepanel">
+              <span class="aui-icon aui-icon-small aui-iconfont-devtools-clone"></span>
+              <span>Clone</span>
+              <span class="aui-icon-dropdown"></span>
+            </a>
+            
+              
+                <a id="fork-button" class="aui-button"
+                   href="/bitsbobsetc/slidingsidepanel/fork">
+                  <span class="aui-icon aui-icon-small aui-iconfont-devtools-fork"></span>
+                  <span>Fork</span>
+                </a>
+              
+              <a id="compare-button" class="aui-button"
+                 href="/bitsbobsetc/slidingsidepanel/compare">
+                <span class="aui-icon aui-icon-small aui-iconfont-devtools-compare"></span>
+                <span>Compare</span>
+              </a>
+            
+          </div>
+        
+        
+        
+
+<div id="repo-clone-dialog" class="clone-dialog hidden">
+  
+<div class="clone-url">
+  <div class="aui-buttons">
+    <a href="https://bitbucket.org/bitsbobsetc/slidingsidepanel"
+       class="aui-button aui-style aui-dropdown2-trigger" aria-haspopup="true"
+       aria-owns="clone-url-dropdown-header">
+      <span class="dropdown-text">HTTPS</span>
+    </a>
+    <div id="clone-url-dropdown-header" class="aui-dropdown2 aui-style-default">
+      <ul class="aui-list-truncate">
+        <li>
+          <a href="https://bitbucket.org/bitsbobsetc/slidingsidepanel"
+            
+              data-command="hg clone https://bitbucket.org/bitsbobsetc/slidingsidepanel"
+            
+            class="item-link https">HTTPS
+          </a>
+        </li>
+        <li>
+          <a href="ssh://hg@bitbucket.org/bitsbobsetc/slidingsidepanel"
+            
+              data-command="hg clone ssh://hg@bitbucket.org/bitsbobsetc/slidingsidepanel"
+            
+            class="item-link ssh">SSH
+          </a>
+        </li>
+      </ul>
+    </div>
+    <input type="text" readonly="readonly" value="hg clone https://bitbucket.org/bitsbobsetc/slidingsidepanel">
+  </div>
+  
+  <p>Need help cloning? Visit
+     <a href="https://confluence.atlassian.com/x/cgozDQ" target="_blank">Bitbucket 101</a>.</p>
+  
+</div>
+
+
+  
+  
+  
+
+<div class="sourcetree-callout clone-in-sourcetree"
+  data-https-url="https://bitbucket.org/bitsbobsetc/slidingsidepanel"
+  data-ssh-url="ssh://hg@bitbucket.org/bitsbobsetc/slidingsidepanel">
+
+  <div>
+    <button class="aui-button aui-style aui-button-primary">
+      
+        Clone in SourceTree
+      
+    </button>
+  </div>
+
+  <p class="windows-text">
+      
+        <a href="http://www.sourcetreeapp.com/?utm_source=internal&amp;utm_medium=link&amp;utm_campaign=clone_repo_win" target="_blank">Atlassian SourceTree</a>
+        is a free Git and Mercurial client for Windows.
+      
+  </p>
+  <p class="mac-text">
+      
+        <a href="http://www.sourcetreeapp.com/?utm_source=internal&amp;utm_medium=link&amp;utm_campaign=clone_repo_mac" target="_blank">Atlassian SourceTree</a>
+        is a free Git and Mercurial client for Mac.
+      
+  </p>
+</div>
+
+  
+</div>
+
+        <div id="repo-more-dropdown" class="aui-dropdown2 aui-style-default">
+          <ul>
+            <li>
+              <a id="compare-button" href="/bitsbobsetc/slidingsidepanel/compare">
+                Compare
+              </a>
+            </li>
+            
+              <li>
+                <a id="fork-button" href="/bitsbobsetc/slidingsidepanel/fork">
+                  Fork
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </header>
+  <nav id="repo-tabs" class="aui-navgroup aui-navgroup-horizontal aui-navgroup-horizontal-roomy">
+    <div class="aui-navgroup-inner">
+      <div class="aui-navgroup-primary">
+        <ul class="aui-nav">
+          
+            <li>
+              <a href="/bitsbobsetc/slidingsidepanel/overview" id="repo-overview-link">Overview</a>
+            </li>
+          
+          
+            <li class="aui-nav-selected">
+              <a href="/bitsbobsetc/slidingsidepanel/src" id="repo-source-link">Source</a>
+            </li>
+          
+          
+            <li>
+              <a href="/bitsbobsetc/slidingsidepanel/commits" id="repo-commits-link">
+                Commits
+              </a>
+            </li>
+          
+          
+            <li>
+              <a href="/bitsbobsetc/slidingsidepanel/branches" id="repo-branches-link">
+                Branches
+              </a>
+            </li>
+          
+          
+            <li>
+              <a href="/bitsbobsetc/slidingsidepanel/pull-requests" id="repo-pullrequests-link">
+                Pull requests
+                
+                  
+                
+              </a>
+            </li>
+          
+          
+            
+          
+            <li id="issues-tab" class="
+              
+                hidden
+              
+            ">
+              <a href="/bitsbobsetc/slidingsidepanel/issues?status=new&amp;status=open" id="repo-issues-link">
+                Issues
+                
+                  
+                
+              </a>
+            </li>
+            <li id="wiki-tab" class="
+                
+                  hidden
+                
+              ">
+              <a href="/bitsbobsetc/slidingsidepanel/wiki" id="repo-wiki-link">Wiki</a>
+            </li>
+          
+            <li>
+            <a href="/bitsbobsetc/slidingsidepanel/downloads" id="repo-downloads-link">
+              Downloads
+              
+                
+              
+            </a>
+            </li>
+          
+        </ul>
+      </div>
+      <div class="aui-navgroup-secondary">
+        <ul class="aui-nav">
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+    <div id="content" role="main">
+      
+  <div id="repo-content">
+    
+  <div id="source-container" data-modules="repo/source/index">
+    
+
+
+
+<header id="source-path">
+  
+  <div class="labels labels-csv">
+    
+      <div class="aui-buttons">
+        <button data-branches-tags-url="/api/1.0/repositories/bitsbobsetc/slidingsidepanel/branches-tags"
+                data-modules="components/branch-dialog"
+                class="aui-button branch-dialog-trigger" title="default">
+          
+            
+              <span class="aui-icon aui-icon-small aui-iconfont-devtools-branch">Branch</span>
+            
+            <span class="name">default</span>
+          
+          <span class="aui-icon-dropdown"></span>
+        </button>
+        <button class="aui-button" id="checkout-branch-button"
+                title="Check out this branch">
+          <span class="aui-icon aui-icon-small aui-iconfont-devtools-clone">Check out branch</span>
+          <span class="aui-icon-dropdown"></span>
+        </button>
+      </div>
+      <script id="branch-checkout-template" type="text/html">
+  
+
+<div id="checkout-branch-contents">
+  <div class="command-line">
+    <p>
+      Check out this branch on your local machine to begin working on it.
+    </p>
+    <input type="text" class="checkout-command" readonly="readonly"
+        
+          value="hg pull && hg update [[branchName]]"
+        
+        >
+  </div>
+  
+    
+
+<div class="sourcetree-callout clone-in-sourcetree"
+  data-https-url="https://bitbucket.org/bitsbobsetc/slidingsidepanel"
+  data-ssh-url="ssh://hg@bitbucket.org/bitsbobsetc/slidingsidepanel">
+
+  <div>
+    <button class="aui-button aui-style aui-button-primary">
+      
+        Check out in SourceTree
+      
+    </button>
+  </div>
+
+  <p class="windows-text">
+      
+        <a href="http://www.sourcetreeapp.com/?utm_source=internal&amp;utm_medium=link&amp;utm_campaign=clone_repo_win" target="_blank">Atlassian SourceTree</a>
+        is a free Git and Mercurial client for Windows.
+      
+  </p>
+  <p class="mac-text">
+      
+        <a href="http://www.sourcetreeapp.com/?utm_source=internal&amp;utm_medium=link&amp;utm_campaign=clone_repo_mac" target="_blank">Atlassian SourceTree</a>
+        is a free Git and Mercurial client for Mac.
+      
+  </p>
+</div>
+
+  
+</div>
+</script>
+    
+  </div>
+  
+  
+    <div class="view-switcher">
+      <div class="aui-buttons">
+        
+          <a href="/bitsbobsetc/slidingsidepanel/src/613b229396f5/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML?at=default"
+             class="aui-button aui-style pjax-trigger" aria-pressed="true">
+            Source
+          </a>
+          <a href="/bitsbobsetc/slidingsidepanel/diff/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML?diff2=613b229396f5&at=default"
+             class="aui-button aui-style pjax-trigger"
+             title="Diff to previous change">
+            Diff
+          </a>
+          <a href="/bitsbobsetc/slidingsidepanel/history-node/613b229396f5/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML?at=default"
+             class="aui-button aui-style pjax-trigger">
+            History
+          </a>
+        
+      </div>
+    </div>
+  
+  <h1>
+    <a href="/bitsbobsetc/slidingsidepanel/src/613b229396f5?at=default"
+       class="pjax-trigger" title="bitsbobsetc/slidingsidepanel at 613b229396f5">SlidingSidePanel</a> /
+    
+      
+        
+          
+            <a href="/bitsbobsetc/slidingsidepanel/src/613b229396f5/SlidingSidePanel/?at=default"
+               class="pjax-trigger">SlidingSidePanel</a> /
+          
+        
+      
+    
+      
+        
+          
+            <a href="/bitsbobsetc/slidingsidepanel/src/613b229396f5/SlidingSidePanel/External/?at=default"
+               class="pjax-trigger">External</a> /
+          
+        
+      
+    
+      
+        
+          <span>GalaSoft.MvvmLight.Extras.XML</span>
+        
+      
+    
+  </h1>
+  
+    
+    
+  
+  <div class="clearfix"></div>
+</header>
+
+
+    <div id="editor-container" class="maskable"
+         data-owner="bitsbobsetc"
+         data-slug="slidingsidepanel"
+         data-is-writer="false"
+         data-has-push-access="true"
+         data-hash="613b229396f5a9b59f3a3923af57d280c0ffb404"
+         data-branch="default"
+         data-path="SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML"
+         data-source-url="/api/1.0/repositories/bitsbobsetc/slidingsidepanel/src/613b229396f5a9b59f3a3923af57d280c0ffb404/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML">
+      <div id="source-view" data-modules="repo/source/view-file">
+        <div class="toolbar">
+          <div class="primary">
+            <div class="aui-buttons">
+              
+                <button id="file-history-trigger" class="aui-button aui-style changeset-info"
+                        data-changeset="613b229396f5a9b59f3a3923af57d280c0ffb404"
+                        data-path="SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML"
+                        data-current="613b229396f5a9b59f3a3923af57d280c0ffb404">
+                  
+                     
+
+<img class="avatar avatar16" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/img/default_avatar/16/user_blue.png" alt="Anonymous avatar" />
+<span class="changeset-hash">613b229</span>
+<time datetime="2013-09-08T21:50:56+00:00" class="timestamp"></time>
+<span class="aui-icon-dropdown"></span>
+
+                  
+                </button>
+              
+            </div>
+          <a href="/bitsbobsetc/slidingsidepanel/full-commit/613b229396f5/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML" id="full-commit-link"
+              title="View full commit 613b229">Full commit</a>
+          </div>
+            <div class="secondary">
+              <div class="aui-buttons">
+                
+                  <a href="/bitsbobsetc/slidingsidepanel/annotate/613b229396f5a9b59f3a3923af57d280c0ffb404/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML?at=default"
+                  class="aui-button aui-style pjax-trigger">Blame</a>
+                
+                
+                  
+                  <a id="embed-link" href="https://bitbucket.org/bitsbobsetc/slidingsidepanel/src/613b229396f5a9b59f3a3923af57d280c0ffb404/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML?embed=t"
+                    class="aui-button aui-style">Embed</a>
+                
+                <a href="/bitsbobsetc/slidingsidepanel/raw/613b229396f5a9b59f3a3923af57d280c0ffb404/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML"
+                  class="aui-button aui-style">Raw</a>
+              </div>
+              
+            </div>
+          <div class="clearfix"></div>
+        </div>
+
+        
+          
+            
+              
+                <div class="file-source">
+                  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#cl-1">  1</a>
+<a href="#cl-2">  2</a>
+<a href="#cl-3">  3</a>
+<a href="#cl-4">  4</a>
+<a href="#cl-5">  5</a>
+<a href="#cl-6">  6</a>
+<a href="#cl-7">  7</a>
+<a href="#cl-8">  8</a>
+<a href="#cl-9">  9</a>
+<a href="#cl-10"> 10</a>
+<a href="#cl-11"> 11</a>
+<a href="#cl-12"> 12</a>
+<a href="#cl-13"> 13</a>
+<a href="#cl-14"> 14</a>
+<a href="#cl-15"> 15</a>
+<a href="#cl-16"> 16</a>
+<a href="#cl-17"> 17</a>
+<a href="#cl-18"> 18</a>
+<a href="#cl-19"> 19</a>
+<a href="#cl-20"> 20</a>
+<a href="#cl-21"> 21</a>
+<a href="#cl-22"> 22</a>
+<a href="#cl-23"> 23</a>
+<a href="#cl-24"> 24</a>
+<a href="#cl-25"> 25</a>
+<a href="#cl-26"> 26</a>
+<a href="#cl-27"> 27</a>
+<a href="#cl-28"> 28</a>
+<a href="#cl-29"> 29</a>
+<a href="#cl-30"> 30</a>
+<a href="#cl-31"> 31</a>
+<a href="#cl-32"> 32</a>
+<a href="#cl-33"> 33</a>
+<a href="#cl-34"> 34</a>
+<a href="#cl-35"> 35</a>
+<a href="#cl-36"> 36</a>
+<a href="#cl-37"> 37</a>
+<a href="#cl-38"> 38</a>
+<a href="#cl-39"> 39</a>
+<a href="#cl-40"> 40</a>
+<a href="#cl-41"> 41</a>
+<a href="#cl-42"> 42</a>
+<a href="#cl-43"> 43</a>
+<a href="#cl-44"> 44</a>
+<a href="#cl-45"> 45</a>
+<a href="#cl-46"> 46</a>
+<a href="#cl-47"> 47</a>
+<a href="#cl-48"> 48</a>
+<a href="#cl-49"> 49</a>
+<a href="#cl-50"> 50</a>
+<a href="#cl-51"> 51</a>
+<a href="#cl-52"> 52</a>
+<a href="#cl-53"> 53</a>
+<a href="#cl-54"> 54</a>
+<a href="#cl-55"> 55</a>
+<a href="#cl-56"> 56</a>
+<a href="#cl-57"> 57</a>
+<a href="#cl-58"> 58</a>
+<a href="#cl-59"> 59</a>
+<a href="#cl-60"> 60</a>
+<a href="#cl-61"> 61</a>
+<a href="#cl-62"> 62</a>
+<a href="#cl-63"> 63</a>
+<a href="#cl-64"> 64</a>
+<a href="#cl-65"> 65</a>
+<a href="#cl-66"> 66</a>
+<a href="#cl-67"> 67</a>
+<a href="#cl-68"> 68</a>
+<a href="#cl-69"> 69</a>
+<a href="#cl-70"> 70</a>
+<a href="#cl-71"> 71</a>
+<a href="#cl-72"> 72</a>
+<a href="#cl-73"> 73</a>
+<a href="#cl-74"> 74</a>
+<a href="#cl-75"> 75</a>
+<a href="#cl-76"> 76</a>
+<a href="#cl-77"> 77</a>
+<a href="#cl-78"> 78</a>
+<a href="#cl-79"> 79</a>
+<a href="#cl-80"> 80</a>
+<a href="#cl-81"> 81</a>
+<a href="#cl-82"> 82</a>
+<a href="#cl-83"> 83</a>
+<a href="#cl-84"> 84</a>
+<a href="#cl-85"> 85</a>
+<a href="#cl-86"> 86</a>
+<a href="#cl-87"> 87</a>
+<a href="#cl-88"> 88</a>
+<a href="#cl-89"> 89</a>
+<a href="#cl-90"> 90</a>
+<a href="#cl-91"> 91</a>
+<a href="#cl-92"> 92</a>
+<a href="#cl-93"> 93</a>
+<a href="#cl-94"> 94</a>
+<a href="#cl-95"> 95</a>
+<a href="#cl-96"> 96</a>
+<a href="#cl-97"> 97</a>
+<a href="#cl-98"> 98</a>
+<a href="#cl-99"> 99</a>
+<a href="#cl-100">100</a>
+<a href="#cl-101">101</a>
+<a href="#cl-102">102</a>
+<a href="#cl-103">103</a>
+<a href="#cl-104">104</a>
+<a href="#cl-105">105</a>
+<a href="#cl-106">106</a>
+<a href="#cl-107">107</a>
+<a href="#cl-108">108</a>
+<a href="#cl-109">109</a>
+<a href="#cl-110">110</a>
+<a href="#cl-111">111</a>
+<a href="#cl-112">112</a>
+<a href="#cl-113">113</a>
+<a href="#cl-114">114</a>
+<a href="#cl-115">115</a>
+<a href="#cl-116">116</a>
+<a href="#cl-117">117</a>
+<a href="#cl-118">118</a>
+<a href="#cl-119">119</a>
+<a href="#cl-120">120</a>
+<a href="#cl-121">121</a>
+<a href="#cl-122">122</a>
+<a href="#cl-123">123</a>
+<a href="#cl-124">124</a>
+<a href="#cl-125">125</a>
+<a href="#cl-126">126</a>
+<a href="#cl-127">127</a>
+<a href="#cl-128">128</a>
+<a href="#cl-129">129</a>
+<a href="#cl-130">130</a>
+<a href="#cl-131">131</a>
+<a href="#cl-132">132</a>
+<a href="#cl-133">133</a>
+<a href="#cl-134">134</a>
+<a href="#cl-135">135</a>
+<a href="#cl-136">136</a>
+<a href="#cl-137">137</a>
+<a href="#cl-138">138</a>
+<a href="#cl-139">139</a>
+<a href="#cl-140">140</a>
+<a href="#cl-141">141</a>
+<a href="#cl-142">142</a>
+<a href="#cl-143">143</a>
+<a href="#cl-144">144</a>
+<a href="#cl-145">145</a>
+<a href="#cl-146">146</a>
+<a href="#cl-147">147</a>
+<a href="#cl-148">148</a>
+<a href="#cl-149">149</a>
+<a href="#cl-150">150</a>
+<a href="#cl-151">151</a>
+<a href="#cl-152">152</a>
+<a href="#cl-153">153</a>
+<a href="#cl-154">154</a>
+<a href="#cl-155">155</a>
+<a href="#cl-156">156</a>
+<a href="#cl-157">157</a>
+<a href="#cl-158">158</a>
+<a href="#cl-159">159</a>
+<a href="#cl-160">160</a>
+<a href="#cl-161">161</a>
+<a href="#cl-162">162</a>
+<a href="#cl-163">163</a>
+<a href="#cl-164">164</a>
+<a href="#cl-165">165</a>
+<a href="#cl-166">166</a>
+<a href="#cl-167">167</a>
+<a href="#cl-168">168</a>
+<a href="#cl-169">169</a>
+<a href="#cl-170">170</a>
+<a href="#cl-171">171</a>
+<a href="#cl-172">172</a>
+<a href="#cl-173">173</a>
+<a href="#cl-174">174</a>
+<a href="#cl-175">175</a>
+<a href="#cl-176">176</a>
+<a href="#cl-177">177</a>
+<a href="#cl-178">178</a>
+<a href="#cl-179">179</a>
+<a href="#cl-180">180</a>
+<a href="#cl-181">181</a>
+<a href="#cl-182">182</a>
+<a href="#cl-183">183</a>
+<a href="#cl-184">184</a>
+<a href="#cl-185">185</a>
+<a href="#cl-186">186</a>
+<a href="#cl-187">187</a>
+<a href="#cl-188">188</a>
+<a href="#cl-189">189</a>
+<a href="#cl-190">190</a>
+<a href="#cl-191">191</a>
+<a href="#cl-192">192</a>
+<a href="#cl-193">193</a>
+<a href="#cl-194">194</a>
+<a href="#cl-195">195</a>
+<a href="#cl-196">196</a>
+<a href="#cl-197">197</a>
+<a href="#cl-198">198</a>
+<a href="#cl-199">199</a>
+<a href="#cl-200">200</a>
+<a href="#cl-201">201</a>
+<a href="#cl-202">202</a>
+<a href="#cl-203">203</a>
+<a href="#cl-204">204</a>
+<a href="#cl-205">205</a>
+<a href="#cl-206">206</a>
+<a href="#cl-207">207</a>
+<a href="#cl-208">208</a>
+<a href="#cl-209">209</a>
+<a href="#cl-210">210</a>
+<a href="#cl-211">211</a>
+<a href="#cl-212">212</a>
+<a href="#cl-213">213</a>
+<a href="#cl-214">214</a>
+<a href="#cl-215">215</a>
+<a href="#cl-216">216</a>
+<a href="#cl-217">217</a>
+<a href="#cl-218">218</a>
+<a href="#cl-219">219</a>
+<a href="#cl-220">220</a></pre></div></td><td class="code"><div class="highlight"><pre><a name="cl-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<a name="cl-2"></a><span class="nt">&lt;doc&gt;</span>
+<a name="cl-3"></a>    <span class="nt">&lt;assembly&gt;</span>
+<a name="cl-4"></a>        <span class="nt">&lt;name&gt;</span>GalaSoft.MvvmLight.Extras<span class="nt">&lt;/name&gt;</span>
+<a name="cl-5"></a>    <span class="nt">&lt;/assembly&gt;</span>
+<a name="cl-6"></a>    <span class="nt">&lt;members&gt;</span>
+<a name="cl-7"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;T:GalaSoft.MvvmLight.Command.EventToCommand&quot;</span><span class="nt">&gt;</span>
+<a name="cl-8"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-9"></a>            This <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;T:System.Windows.Interactivity.TriggerAction&quot;</span><span class="nt">/&gt;</span> can be
+<a name="cl-10"></a>            used to bind any event on any FrameworkElement to an <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;T:System.Windows.Input.ICommand&quot;</span><span class="nt">/&gt;</span>.
+<a name="cl-11"></a>            Typically, this element is used in XAML to connect the attached element
+<a name="cl-12"></a>            to a command located in a ViewModel. This trigger can only be attached
+<a name="cl-13"></a>            to a FrameworkElement or a class deriving from FrameworkElement.
+<a name="cl-14"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-15"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-16"></a>            This <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;T:System.Windows.Interactivity.TriggerAction&quot;</span><span class="nt">/&gt;</span> can be
+<a name="cl-17"></a>            used to bind any event on any FrameworkElement to an <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;T:System.Windows.Input.ICommand&quot;</span><span class="nt">/&gt;</span>.
+<a name="cl-18"></a>            Typically, this element is used in XAML to connect the attached element
+<a name="cl-19"></a>            to a command located in a ViewModel. This trigger can only be attached
+<a name="cl-20"></a>            to a FrameworkElement or a class deriving from FrameworkElement.
+<a name="cl-21"></a>            <span class="nt">&lt;para&gt;</span>To access the EventArgs of the fired event, use a RelayCommand<span class="ni">&amp;lt;</span>EventArgs<span class="ni">&amp;gt;</span>
+<a name="cl-22"></a>            and leave the CommandParameter and CommandParameterValue empty!<span class="nt">&lt;/para&gt;</span>
+<a name="cl-23"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-24"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-25"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;F:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameterProperty&quot;</span><span class="nt">&gt;</span>
+<a name="cl-26"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-27"></a>            Identifies the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter&quot;</span><span class="nt">/&gt;</span> dependency property
+<a name="cl-28"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-29"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-30"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;F:GalaSoft.MvvmLight.Command.EventToCommand.CommandProperty&quot;</span><span class="nt">&gt;</span>
+<a name="cl-31"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-32"></a>            Identifies the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.Command&quot;</span><span class="nt">/&gt;</span> dependency property
+<a name="cl-33"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-34"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-35"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;F:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabledProperty&quot;</span><span class="nt">&gt;</span>
+<a name="cl-36"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-37"></a>            Identifies the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled&quot;</span><span class="nt">/&gt;</span> dependency property
+<a name="cl-38"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-39"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-40"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:GalaSoft.MvvmLight.Command.EventToCommand.#ctor&quot;</span><span class="nt">&gt;</span>
+<a name="cl-41"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-42"></a>            Initializes a new instance of the EventToCommand class.
+<a name="cl-43"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-44"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-45"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:GalaSoft.MvvmLight.Command.EventToCommand.OnAttached&quot;</span><span class="nt">&gt;</span>
+<a name="cl-46"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-47"></a>            Called when this trigger is attached to a FrameworkElement.
+<a name="cl-48"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-49"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-50"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:GalaSoft.MvvmLight.Command.EventToCommand.OnDetaching&quot;</span><span class="nt">&gt;</span>
+<a name="cl-51"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-52"></a>            Called when this trigger is detached from its associated object.
+<a name="cl-53"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-54"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-55"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:GalaSoft.MvvmLight.Command.EventToCommand.Invoke&quot;</span><span class="nt">&gt;</span>
+<a name="cl-56"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-57"></a>            Provides a simple way to invoke this trigger programatically
+<a name="cl-58"></a>            without any EventArgs.
+<a name="cl-59"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-60"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-61"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:GalaSoft.MvvmLight.Command.EventToCommand.Invoke(System.Object)&quot;</span><span class="nt">&gt;</span>
+<a name="cl-62"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-63"></a>            Executes the trigger.
+<a name="cl-64"></a>            <span class="nt">&lt;para&gt;</span>To access the EventArgs of the fired event, use a RelayCommand<span class="ni">&amp;lt;</span>EventArgs<span class="ni">&amp;gt;</span>
+<a name="cl-65"></a>            and leave the CommandParameter and CommandParameterValue empty!<span class="nt">&lt;/para&gt;</span>
+<a name="cl-66"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-67"></a>            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;parameter&quot;</span><span class="nt">&gt;</span>The EventArgs of the fired event.<span class="nt">&lt;/param&gt;</span>
+<a name="cl-68"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-69"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.Command&quot;</span><span class="nt">&gt;</span>
+<a name="cl-70"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-71"></a>            Gets or sets the ICommand that this trigger is bound to. This
+<a name="cl-72"></a>            is a DependencyProperty.
+<a name="cl-73"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-74"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-75"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter&quot;</span><span class="nt">&gt;</span>
+<a name="cl-76"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-77"></a>            Gets or sets an object that will be passed to the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.Command&quot;</span><span class="nt">/&gt;</span>
+<a name="cl-78"></a>            attached to this trigger. This is a DependencyProperty. Because of limitations
+<a name="cl-79"></a>            of Silverlight, you can only set databindings on this property. If you
+<a name="cl-80"></a>            wish to use hard coded values, use the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameterValue&quot;</span><span class="nt">/&gt;</span>
+<a name="cl-81"></a>            property.
+<a name="cl-82"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-83"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-84"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameterValue&quot;</span><span class="nt">&gt;</span>
+<a name="cl-85"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-86"></a>            Gets or sets an object that will be passed to the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.Command&quot;</span><span class="nt">/&gt;</span>
+<a name="cl-87"></a>            attached to this trigger. This is NOT a DependencyProperty. Use this
+<a name="cl-88"></a>            property if you want to set a hard coded value.
+<a name="cl-89"></a>            For databinding, use the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameter&quot;</span><span class="nt">/&gt;</span> property.
+<a name="cl-90"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-91"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-92"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled&quot;</span><span class="nt">&gt;</span>
+<a name="cl-93"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-94"></a>            Gets or sets a value indicating whether the attached element must be
+<a name="cl-95"></a>            disabled when the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.Command&quot;</span><span class="nt">/&gt;</span> property&#39;s CanExecuteChanged
+<a name="cl-96"></a>            event fires. If this property is true, and the command&#39;s CanExecute 
+<a name="cl-97"></a>            method returns false, the element will be disabled. If this property
+<a name="cl-98"></a>            is false, the element will not be disabled when the command&#39;s
+<a name="cl-99"></a>            CanExecute method changes.
+<a name="cl-100"></a>            If the attached element is not a <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;T:System.Windows.Controls.Control&quot;</span><span class="nt">/&gt;</span>, this property
+<a name="cl-101"></a>            has no effect. 
+<a name="cl-102"></a>            This is a DependencyProperty.
+<a name="cl-103"></a>            Because of limitations of Silverlight, you can only set databindings 
+<a name="cl-104"></a>            on this property. If you wish to use hard coded values, use 
+<a name="cl-105"></a>            the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.CommandParameterValue&quot;</span><span class="nt">/&gt;</span> property.
+<a name="cl-106"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-107"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-108"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabledValue&quot;</span><span class="nt">&gt;</span>
+<a name="cl-109"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-110"></a>            Gets or sets a value indicating whether the attached element must be
+<a name="cl-111"></a>            disabled when the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.Command&quot;</span><span class="nt">/&gt;</span> property&#39;s CanExecuteChanged
+<a name="cl-112"></a>            event fires. If this property is true, and the command&#39;s CanExecute 
+<a name="cl-113"></a>            method returns false, the element will be disabled.
+<a name="cl-114"></a>            If the attached element is not a <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;T:System.Windows.Controls.Control&quot;</span><span class="nt">/&gt;</span>, this property
+<a name="cl-115"></a>            has no effect. 
+<a name="cl-116"></a>            This property is here for compatibility with the Silverlight version. 
+<a name="cl-117"></a>            This is NOT a DependencyProperty.
+<a name="cl-118"></a>            Use this property if you want to set a hard coded value.
+<a name="cl-119"></a>            For databinding, use the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.MustToggleIsEnabled&quot;</span><span class="nt">/&gt;</span> property.
+<a name="cl-120"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-121"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-122"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Command.EventToCommand.PassEventArgsToCommand&quot;</span><span class="nt">&gt;</span>
+<a name="cl-123"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-124"></a>            Gets or sets a value indicating whether the EventArgs passed to the
+<a name="cl-125"></a>            event handler will be forwarded to the ICommand&#39;s Execute method
+<a name="cl-126"></a>            when the event is fired (if the bound ICommand accepts an argument
+<a name="cl-127"></a>            of type EventArgs).
+<a name="cl-128"></a>            <span class="nt">&lt;para&gt;</span>For example, use a RelayCommand<span class="ni">&amp;lt;</span>MouseEventArgs<span class="ni">&amp;gt;</span> to get
+<a name="cl-129"></a>            the arguments of a MouseMove event.<span class="nt">&lt;/para&gt;</span>
+<a name="cl-130"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-131"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-132"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;T:Expression.Samples.Interactivity.DataHelpers.BindingListener&quot;</span><span class="nt">&gt;</span>
+<a name="cl-133"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-134"></a>            Helper class for adding Bindings to non-FrameworkElements
+<a name="cl-135"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-136"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-137"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:Expression.Samples.Interactivity.DataHelpers.BindingListener.#ctor(System.Object,Expression.Samples.Interactivity.DataHelpers.BindingListener.ChangedHandler)&quot;</span><span class="nt">&gt;</span>
+<a name="cl-138"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-139"></a>            Constructor.
+<a name="cl-140"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-141"></a>            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;changedHandler&quot;</span><span class="nt">&gt;</span>Callback whenever the value of this binding has changed.<span class="nt">&lt;/param&gt;</span>
+<a name="cl-142"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-143"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:Expression.Samples.Interactivity.DataHelpers.BindingListener.#ctor&quot;</span><span class="nt">&gt;</span>
+<a name="cl-144"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-145"></a>            Constructor
+<a name="cl-146"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-147"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-148"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:Expression.Samples.Interactivity.DataHelpers.BindingListener.Binding&quot;</span><span class="nt">&gt;</span>
+<a name="cl-149"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-150"></a>            The Binding which is to be evaluated
+<a name="cl-151"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-152"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-153"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:Expression.Samples.Interactivity.DataHelpers.BindingListener.Element&quot;</span><span class="nt">&gt;</span>
+<a name="cl-154"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-155"></a>            The element to be used as the context on which to evaluate the binding.
+<a name="cl-156"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-157"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-158"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:Expression.Samples.Interactivity.DataHelpers.BindingListener.Value&quot;</span><span class="nt">&gt;</span>
+<a name="cl-159"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-160"></a>            The current value of this binding.
+<a name="cl-161"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-162"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-163"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;T:Expression.Samples.Interactivity.DataHelpers.BindingListener.ChangedHandler&quot;</span><span class="nt">&gt;</span>
+<a name="cl-164"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-165"></a>            Delegate for when the binding listener has changed.
+<a name="cl-166"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-167"></a>            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;sender&quot;</span><span class="nt">&gt;&lt;/param&gt;</span>
+<a name="cl-168"></a>            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;e&quot;</span><span class="nt">&gt;&lt;/param&gt;</span>
+<a name="cl-169"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-170"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;T:Expression.Samples.Interactivity.DataHelpers.BindingChangedEventArgs&quot;</span><span class="nt">&gt;</span>
+<a name="cl-171"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-172"></a>            Event args for when binding values change.
+<a name="cl-173"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-174"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-175"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:Expression.Samples.Interactivity.DataHelpers.BindingChangedEventArgs.#ctor(System.Windows.DependencyPropertyChangedEventArgs)&quot;</span><span class="nt">&gt;</span>
+<a name="cl-176"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-177"></a>            Constructor
+<a name="cl-178"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-179"></a>            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;e&quot;</span><span class="nt">&gt;&lt;/param&gt;</span>
+<a name="cl-180"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-181"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:Expression.Samples.Interactivity.DataHelpers.BindingChangedEventArgs.EventArgs&quot;</span><span class="nt">&gt;</span>
+<a name="cl-182"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-183"></a>            Original event args.
+<a name="cl-184"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-185"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-186"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;T:GalaSoft.MvvmLight.Threading.DispatcherHelper&quot;</span><span class="nt">&gt;</span>
+<a name="cl-187"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-188"></a>            Helper class for dispatcher operations on the UI thread.
+<a name="cl-189"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-190"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-191"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:GalaSoft.MvvmLight.Threading.DispatcherHelper.CheckBeginInvokeOnUI(System.Action)&quot;</span><span class="nt">&gt;</span>
+<a name="cl-192"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-193"></a>            Executes an action on the UI thread. If this method is called
+<a name="cl-194"></a>            from the UI thread, the action is executed immendiately. If the
+<a name="cl-195"></a>            method is called from another thread, the action will be enqueued
+<a name="cl-196"></a>            on the UI thread&#39;s dispatcher and executed asynchronously.
+<a name="cl-197"></a>            <span class="nt">&lt;para&gt;</span>For additional operations on the UI thread, you can get a
+<a name="cl-198"></a>            reference to the UI thread&#39;s dispatcher thanks to the property
+<a name="cl-199"></a>            <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher&quot;</span><span class="nt">/&gt;&lt;/para&gt;</span>.
+<a name="cl-200"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-201"></a>            <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;action&quot;</span><span class="nt">&gt;</span>The action that will be executed on the UI
+<a name="cl-202"></a>            thread.<span class="nt">&lt;/param&gt;</span>
+<a name="cl-203"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-204"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;M:GalaSoft.MvvmLight.Threading.DispatcherHelper.Initialize&quot;</span><span class="nt">&gt;</span>
+<a name="cl-205"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-206"></a>            This method should be called once on the UI thread to ensure that
+<a name="cl-207"></a>            the <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher&quot;</span><span class="nt">/&gt;</span> property is initialized.
+<a name="cl-208"></a>            <span class="nt">&lt;para&gt;</span>In a Silverlight application, call this method in the
+<a name="cl-209"></a>            Application_Startup event handler, after the MainPage is constructed.<span class="nt">&lt;/para&gt;</span>
+<a name="cl-210"></a>            <span class="nt">&lt;para&gt;</span>In WPF, call this method on the static App() constructor.<span class="nt">&lt;/para&gt;</span>
+<a name="cl-211"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-212"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-213"></a>        <span class="nt">&lt;member</span> <span class="na">name=</span><span class="s">&quot;P:GalaSoft.MvvmLight.Threading.DispatcherHelper.UIDispatcher&quot;</span><span class="nt">&gt;</span>
+<a name="cl-214"></a>            <span class="nt">&lt;summary&gt;</span>
+<a name="cl-215"></a>            Gets a reference to the UI thread&#39;s dispatcher, after the
+<a name="cl-216"></a>            <span class="nt">&lt;see</span> <span class="na">cref=</span><span class="s">&quot;M:GalaSoft.MvvmLight.Threading.DispatcherHelper.Initialize&quot;</span><span class="nt">/&gt;</span> method has been called on the UI thread.
+<a name="cl-217"></a>            <span class="nt">&lt;/summary&gt;</span>
+<a name="cl-218"></a>        <span class="nt">&lt;/member&gt;</span>
+<a name="cl-219"></a>    <span class="nt">&lt;/members&gt;</span>
+<a name="cl-220"></a><span class="nt">&lt;/doc&gt;</span>
+</pre></div>
+</td></tr></table>
+                </div>
+              
+            
+          
+        
+      </div>
+    </div>
+
+
+
+<div class="mask"></div>
+
+
+
+  <script id="branch-dialog-template" type="text/html">
+  
+
+<div class="tabbed-filter-widget branch-dialog">
+  <div class="tabbed-filter">
+    <input placeholder="Filter branches" class="filter-box" autosave="branch-dropdown-321103" type="text">
+    [[^ignoreTags]]
+      <div class="aui-tabs horizontal-tabs aui-tabs-disabled filter-tabs">
+        <ul class="tabs-menu">
+          <li class="menu-item active-tab"><a href="#branches">Branches</a></li>
+          <li class="menu-item"><a href="#tags">Tags</a></li>
+        </ul>
+      </div>
+    [[/ignoreTags]]
+  </div>
+  
+    <div class="tab-pane active-pane" id="branches" data-filter-placeholder="Filter branches">
+      <ol class="filter-list">
+        <li class="empty-msg">No matching branches</li>
+        [[#branches]]
+          
+            [[#hasMultipleHeads]]
+              [[#heads]]
+                <li class="comprev filter-item">
+                  <a class="pjax-trigger" href="/bitsbobsetc/slidingsidepanel/src/[[changeset]]/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML?at=[[safeName]]"
+                     title="[[name]]">
+                    [[name]] ([[shortChangeset]])
+                  </a>
+                </li>
+              [[/heads]]
+            [[/hasMultipleHeads]]
+            [[^hasMultipleHeads]]
+              <li class="comprev filter-item">
+                <a class="pjax-trigger" href="/bitsbobsetc/slidingsidepanel/src/[[changeset]]/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML?at=[[safeName]]" title="[[name]]">
+                  [[name]]
+                </a>
+              </li>
+            [[/hasMultipleHeads]]
+          
+        [[/branches]]
+      </ol>
+    </div>
+    <div class="tab-pane" id="tags" data-filter-placeholder="Filter tags">
+      <ol class="filter-list">
+        <li class="empty-msg">No matching tags</li>
+        [[#tags]]
+          <li class="comprev filter-item">
+            <a class="pjax-trigger" href="/bitsbobsetc/slidingsidepanel/src/[[changeset]]/SlidingSidePanel/External/GalaSoft.MvvmLight.Extras.XML?at=[[safeName]]" title="[[name]]">
+              [[name]]
+            </a>
+          </li>
+        [[/tags]]
+      </ol>
+    </div>
+  
+</div>
+
+</script>
+
+
+
+  </div>
+
+  </div>
+  
+
+<form id="file-search-form" action="#"
+  
+  data-revision="613b229396f5a9b59f3a3923af57d280c0ffb404"
+  data-branch="default">
+  <input type="text" id="file-search-query" class="loading">
+  <div id="filtered-files"></div>
+  <div class="tip"><em>Tip:</em> Filter by directory path e.g. <strong>/media app.js</strong> to search for public<strong>/media/app.js</strong>.</div>
+  <div class="tip"><em>Tip:</em> Use camelCasing e.g. <strong>ProjME</strong> to search for <strong>ProjectModifiedE</strong>vent.java.</div>
+  <div class="tip"><em>Tip:</em> Filter by extension type e.g. <strong>/repo .js</strong> to search for all <strong>.js</strong> files in the <strong>/repo</strong> directory.</div>
+  <div class="tip"><em>Tip:</em> Separate your search with spaces e.g. <strong>/ssh pom.xml</strong> to search for src<strong>/ssh/pom.xml</strong>.</div>
+  <div class="tip"><em>Tip:</em> Use ↑ and ↓ arrow keys to navigate and <strong>return</strong> to view the file.</div>
+  <div class="tip mod-osx"><em>Tip:</em> You can also navigate files with <strong>Ctrl+j</strong> <em>(next)</em> and <strong>Ctrl+k</strong> <em>(previous)</em> and view the file with <strong>Ctrl+o</strong>.</div>
+  <div class="tip mod-win"><em>Tip:</em> You can also navigate files with <strong>Alt+j</strong> <em>(next)</em> and <strong>Alt+k</strong> <em>(previous)</em> and view the file with <strong>Alt+o</strong>.</div>
+  <script id="filtered-files-template" type="text/html">
+  
+
+<table class="aui bb-list">
+  <thead>
+    <tr class="assistive">
+      <th class="name">Filename</th>
+    </tr>
+  </thead>
+  <tbody>
+    [[#files]]
+    <tr class="iterable-item">
+      <td class="name [[#isDirectory]]directory[[/isDirectory]]">
+        <span class="aui-icon aui-icon-small[[#isDirectory]] aui-iconfont-devtools-folder-closed[[/isDirectory]][[^isDirectory]] aui-iconfont-devtools-file[[/isDirectory]]"></span>
+        <a href="/bitsbobsetc/slidingsidepanel/src/[[node]]/[[name]][[#branch]][[#isDirectory]]/[[/isDirectory]]?at=[[branch]][[/branch]]"
+           title="[[name]]" class="execute" tabindex="-1">
+          [[&highlightedName]]
+        </a>
+      </td>
+    </tr>
+    [[/files]]
+  </tbody>
+</table>
+
+</script>
+</form>
+
+
+    </div>
+  </div>
+
+  <footer id="footer" role="contentinfo">
+    <section class="footer-body">
+      
+  <ul>
+    <li>
+      <a class="support-ga" target="_blank"
+           data-support-gaq-page="Blog"
+           href="http://blog.bitbucket.org">Blog</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank"
+           data-support-gaq-page="Home"
+           href="/support">Support</a>
+    </li>
+    <li>
+      <a class="support-ga"
+           data-support-gaq-page="PlansPricing"
+           href="/plans">Plans &amp; pricing</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank"
+           data-support-gaq-page="DocumentationHome"
+           href="//confluence.atlassian.com/display/BITBUCKET">Documentation</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank"
+           data-support-gaq-page="DocumentationAPI"
+           href="//confluence.atlassian.com/x/IYBGDQ">API</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank"
+           data-support-gaq-page="SiteStatus"
+           href="http://status.bitbucket.org/">Server status</a>
+    </li>
+    <li>
+      <a class="support-ga" id="meta-info"
+           data-support-gaq-page="MetaInfo"
+           href="#">Version info</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank"
+           data-support-gaq-page="EndUserAgreement"
+           href="//www.atlassian.com/end-user-agreement?utm_source=bitbucket&amp;utm_medium=link&amp;utm_campaign=footer">Terms of service</a>
+    </li>
+    <li>
+      <a class="support-ga" target="_blank"
+           data-support-gaq-page="PrivacyPolicy"
+           href="//www.atlassian.com/company/privacy?utm_source=bitbucket&amp;utm_medium=link&amp;utm_campaign=footer">Privacy policy</a>
+    </li>
+  </ul>
+  <div id="meta-info-content" style="display: none;">
+    <ul>
+      
+        
+          <li>English</li>
+        
+      
+      <li>
+        <a class="support-ga" target="_blank"
+           data-support-gaq-page="GitDocumentation"
+           href="http://git-scm.com/">Git 1.8.4.2</a>
+      </li>
+      <li>
+        <a class="support-ga" target="_blank"
+           data-support-gaq-page="HgDocumentation"
+           href="http://mercurial.selenic.com/">Mercurial 2.2.2</a>
+      </li>
+      <li>
+        <a class="support-ga" target="_blank"
+           data-support-gaq-page="DjangoDocumentation"
+           href="https://www.djangoproject.com/">Django 1.4.6</a>
+      </li>
+      <li>
+        <a class="support-ga" target="_blank"
+           data-support-gaq-page="PythonDocumentation"
+           href="http://www.python.org/">Python 2.7.3</a>
+      </li>
+      <li>
+        <a class="support-ga" target="_blank"
+           data-support-gaq-page="DeployedVersion"
+           href="#">2e8959e0d6a9 / b4673d467030 @ app03</a>
+      </li>
+    </ul>
+  </div>
+  <ul class="atlassian-links">
+    <li>
+      <a id="atlassian-jira-link" target="_blank" title="Track everything – bugs, tasks, deadlines, code – and pull reports to stay informed."
+         href="http://www.atlassian.com/software/jira?utm_source=bitbucket&amp;utm_medium=link&amp;utm_campaign=bitbucket_footer">JIRA</a>
+    </li>
+    <li>
+      <a id="atlassian-confluence-link" target="_blank" title="Content Creation, Collaboration & Knowledge Sharing for Teams."
+         href="http://www.atlassian.com/software/confluence/overview/team-collaboration-software?utm_source=bitbucket&amp;utm_medium=link&amp;utm_campaign=bitbucket_footer">Confluence</a>
+    </li>
+    <li>
+      <a id="atlassian-bamboo-link" target="_blank" title="Continuous integration and deployment, release management."
+         href="http://www.atlassian.com/software/bamboo/overview?utm_source=bitbucket&amp;utm_medium=link&amp;utm_campaign=bitbucket_footer">Bamboo</a>
+    </li>
+    <li>
+      <a id="atlassian-stash-link" target="_blank" title="Git repo management, behind your firewall and Enterprise-ready."
+         href="http://www.atlassian.com/software/stash/overview?utm_source=bitbucket&amp;utm_medium=link&amp;utm_campaign=bitbucket_footer">Stash</a>
+    </li>
+    <li>
+      <a id="atlassian-sourcetree-link" target="_blank" title="A free Git and Mercurial desktop client for Mac or Windows."
+         href="http://www.sourcetreeapp.com/?utm_source=bitbucket&amp;utm_medium=link&amp;utm_campaign=bitbucket_footer">SourceTree</a>
+    </li>
+  </ul>
+  <div id="footer-logo">
+    <a target="_blank" title="Bitbucket is developed by Atlassian in San Francisco."
+       href="http://www.atlassian.com?utm_source=bitbucket&amp;utm_medium=logo&amp;utm_campaign=bitbucket_footer">Atlassian</a>
+  </div>
+  <script id="share-form-template" type="text/html">
+  
+
+<div class="error aui-message hidden">
+  <span class="aui-icon icon-error"></span>
+  <div class="message"></div>
+</div>
+<table class="widget bb-list aui">
+  <thead>
+  <tr class="assistive">
+    <th class="user">User</th>
+    <th class="role">Role</th>
+    <th class="actions">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="form">
+    <td colspan="3">
+      <form>
+        <input type="text" class="user-or-email text user-input"
+               placeholder="Username or email address"
+               [[#disabled]]disabled[[/disabled]]>
+        <button type="submit" class="aui-button aui-style" disabled>Add</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+</script>
+  <script id="share-detail-template" type="text/html">
+  
+
+[[#username]]
+<td class="user
+           [[#hasCustomGroups]]custom-groups[[/hasCustomGroups]]"
+    [[#error]]data-error="[[error]]"[[/error]]>
+  <div title="[[displayName]]">
+    <a href="/[[username]]" class="user">
+      <img class="avatar avatar16" src="[[avatar]]" />
+      <span>[[displayName]]</span>
+    </a>
+  </div>
+</td>
+[[/username]]
+[[^username]]
+<td class="email
+           [[#hasCustomGroups]]custom-groups[[/hasCustomGroups]]"
+    [[#error]]data-error="[[error]]"[[/error]]>
+  <div title="[[email]]">
+    <span class="aui-icon aui-icon-small aui-iconfont-email"></span>
+    [[email]]
+  </div>
+</td>
+[[/username]]
+<td class="role
+           [[#hasCustomGroups]]custom-groups[[/hasCustomGroups]]">
+  <div>
+    [[#group]]
+      [[#hasCustomGroups]]
+        <select class="group">
+          [[#groups]]
+            <option value="[[slug]]"
+                    [[#isSelected]]selected[[/isSelected]]>
+              [[name]]
+            </option>
+          [[/groups]]
+        </select>
+      [[/hasCustomGroups]]
+      [[^hasCustomGroups]]
+      <label>
+        <input type="checkbox" class="admin"
+               [[#isAdmin]]checked[[/isAdmin]]>
+        Administrator
+      </label>
+      [[/hasCustomGroups]]
+    [[/group]]
+    [[^group]]
+      <ul>
+        <li class="permission aui-lozenge aui-lozenge-complete
+                   [[^read]]aui-lozenge-subtle[[/read]]"
+            data-permission="read">
+          read
+        </li>
+        <li class="permission aui-lozenge aui-lozenge-complete
+                   [[^write]]aui-lozenge-subtle[[/write]]"
+            data-permission="write">
+          write
+        </li>
+        <li class="permission aui-lozenge aui-lozenge-complete
+                   [[^admin]]aui-lozenge-subtle[[/admin]]"
+            data-permission="admin">
+          admin
+        </li>
+      </ul>
+    [[/group]]
+  </div>
+</td>
+<td class="actions
+           [[#hasCustomGroups]]custom-groups[[/hasCustomGroups]]">
+  <div>
+    <a href="#" class="delete">
+      <span class="aui-icon aui-icon-small aui-iconfont-remove">Delete</span>
+    </a>
+  </div>
+</td>
+
+</script>
+  <script id="share-team-template" type="text/html">
+  
+
+<div class="clearfix">
+  <span class="team-avatar-container">
+    <img src="[[avatar]]" alt="[[display_name]]" title="[[display_name]]" class="avatar avatar32" />
+  </span>
+  <span class="team-name-container">
+    [[display_name]]
+  </span>
+</div>
+<p class="helptext">
+  
+    Existing users are granted access to this team immediately.
+    New users will be sent an invitation.
+  
+</p>
+<div class="share-form"></div>
+
+</script>
+
+    </section>
+  </footer>
+</div>
+
+
+  
+  <script id="require-js"
+          src="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/amd/build/main.js"
+          data-main="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/amd/build/main"
+          data-page-module="repo/index"></script>
+
+
+
+
+<script>
+  (function () {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  }());
+</script>
+
+<script>
+  window.BB = window.BB || {};
+  setTimeout(function () {
+    window.BB.JsLoaded = true;
+  }, 3000);
+</script>
+
+
+  
+
+<script id="source-changeset" type="text/html">
+  
+
+<a href="/bitsbobsetc/slidingsidepanel/src/[[raw_node]]/[[path]]?at=default"
+   class="[[#selected]]highlight[[/selected]]"
+   data-hash="[[node]]">
+  [[#author.username]]
+    <img class="avatar avatar16" src="[[author.avatar]]"/>
+    <span class="author" title="[[raw_author]]">[[author.display_name]]</span>
+  [[/author.username]]
+  [[^author.username]]
+    <img class="avatar avatar16" src="https://d3oaxc4q5k2d6q.cloudfront.net/m/b4673d467030/img/default_avatar/16/user_blue.png"/>
+    <span class="author unmapped" title="[[raw_author]]">[[author]]</span>
+  [[/author.username]]
+  <time datetime="[[utctimestamp]]" data-title="true">[[utctimestamp]]</time>
+  <span class="message">[[message]]</span>
+</a>
+
+</script>
+<script id="embed-template" type="text/html">
+  
+
+<form class="aui embed">
+  <label for="embed-code">Embed this source in another page:</label>
+  <input type="text" readonly="true" value="&lt;script src=&quot;[[url]]&quot;&gt;&lt;/script&gt;" id="embed-code">
+</form>
+
+</script>
+<script id="edit-form-template" type="text/html">
+  
+
+
+<form class="edit-form aui"
+      data-repository="[[owner]]/[[slug]]"
+      data-destination-repository="[[destinationOwner]]/[[destinationSlug]]"
+      data-local-id="[[localID]]"
+      data-is-writer="[[#isWriter]]true[[/isWriter]][[^isWriter]]false[[/isWriter]]"
+      data-has-push-access="[[#hasPushAccess]]true[[/hasPushAccess]][[^hasPushAccess]]false[[/hasPushAccess]]"
+      data-is-pull-request="[[#isPullRequest]]true[[/isPullRequest]][[^isPullRequest]]false[[/isPullRequest]]"
+      data-hash="[[hash]]"
+      data-branch="[[branch]]"
+      data-path="[[path]]"
+      data-preview-url="/xhr/[[owner]]/[[slug]]/preview/[[hash]]/[[encodedPath]]"
+      data-preview-error="We had trouble generating your preview."
+      data-unsaved-changes-error="Your changes will be lost. Are you sure you want to leave?">
+  <div class="toolbar clearfix">
+    <div class="primary">
+      <h2>
+        
+          Editing <strong>[[path]]</strong> on branch: <strong>[[branch]]</strong>
+        
+      </h2>
+    </div>
+    <div class="secondary">
+      <div class="hunk-nav aui-buttons">
+        <button class="prev-hunk-button aui-button aui-button aui-style"
+              disabled="disabled" aria-disabled="true" title="previous change">&#x25B2;</button>
+        <button class="next-hunk-button aui-button aui-button aui-style"
+              disabled="disabled" aria-disabled="true" title="next change">&#x25BC;</button>
+      </div>
+    </div>
+  </div>
+  <div class="file-editor">
+    <textarea id="id_source">[[content]]</textarea>
+  </div>
+  <div class="preview-pane"></div>
+  <div class="toolbar footer-toolbar clearfix">
+    <div class="primary">
+      <div id="syntax-mode" class="field">
+        <label for="id_syntax-mode">Syntax mode:</label>
+        <select id="id_syntax-mode">
+          [[#syntaxes]]
+            <option value="[[#mime]][[mime]][[/mime]][[^mime]][[mode]][[/mime]]">[[label]]</option>
+          [[/syntaxes]]
+        </select>
+      </div>
+      <div id="indent-mode" class="field">
+        <label for="id_indent-mode">Indent mode:</label>
+        <select id="id_indent-mode">
+          <option value="tabs">Tabs</option>
+          <option value="spaces">Spaces</option>
+        </select>
+      </div>
+      <div id="indent-size" class="field">
+        <label for="id_indent-size">Indent size:</label>
+        <select id="id_indent-size">
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+    </div>
+    <div class="secondary">
+      <button class="preview-button aui-button aui-style"
+              disabled="disabled" aria-disabled="true"
+              data-preview-label="View diff"
+              data-edit-label="Edit file">View diff</button>
+      <button class="save-button aui-button aui-button-primary aui-style"
+              disabled="disabled" aria-disabled="true">Commit</button>
+      <a class="cancel-link" href="#">Cancel</a>
+    </div>
+  </div>
+</form>
+
+</script>
+<script id="commit-form-template" type="text/html">
+  
+
+<form class="aui commit-form"
+      data-title="Commit changes"
+      data-default-message="[[filename]] edited online with Bitbucket"
+      data-fork-error="We had trouble creating your fork."
+      data-commit-error="We had trouble committing your changes."
+      data-pull-request-error="We had trouble creating your pull request."
+      data-update-error="We had trouble updating your pull request."
+      data-branch-conflict-error="A branch with that name already exists."
+      data-forking-message="Forking repository"
+      data-committing-message="Committing changes"
+      data-merging-message="Branching and merging changes"
+      data-creating-pr-message="Creating pull request"
+      data-updating-pr-message="Updating pull request"
+      data-cta-label="Commit"
+      data-cancel-label="Cancel">
+  <div class="aui-message error hidden">
+    <span class="aui-icon icon-error"></span>
+    <span class="message"></span>
+  </div>
+  [[^isWriter]]
+    <div class="aui-message info">
+      <span class="aui-icon icon-info"></span>
+      <p class="title">
+        
+          You don't have write access to this repository.
+        
+      </p>
+      <span class="message">
+        
+          We'll create a fork for your changes and submit a
+          pull request back to this repository.
+        
+      </span>
+    </div>
+  [[/isWriter]]
+  <div class="field-group">
+    <label for="id_message">Commit message</label>
+    <textarea id="id_message" class="textarea"></textarea>
+  </div>
+  [[^isPullRequest]]
+    [[#isWriter]]
+      <fieldset class="group">
+        <div class="checkbox">
+          [[#hasPushAccess]]
+            <input id="id_create-pullrequest" class="checkbox" type="checkbox">
+            <label for="id_create-pullrequest">Create a pull request for this change</label>
+          [[/hasPushAccess]]
+          [[^hasPushAccess]]
+            <input id="id_create-pullrequest" class="checkbox" type="checkbox" checked="checked" aria-disabled="true" disabled="true">
+            <label for="id_create-pullrequest" title="Branch restrictions do not allow you to update this branch.">Create a pull request for this change</label>
+          [[/hasPushAccess]]
+
+        </div>
+      </fieldset>
+      <div id="pr-fields">
+        <div id="branch-name-group" class="field-group">
+          <label for="id_branch-name">Branch name</label>
+          <input type="text" id="id_branch-name" class="text">
+        </div>
+        <div id="reviewers-group" class="field-group"
+              data-api-url="/bitsbobsetc/slidingsidepanel/pull-request/xhr/reviewer/bitsbobsetc/slidingsidepanel/:reviewer_name">
+          <label for="participants">Reviewers</label>
+          <select id="participants" name="reviewers" multiple></select>
+          <div class="error"></div>
+          
+        </div>
+      </div>
+    [[/isWriter]]
+  [[/isPullRequest]]
+  <button type="submit" id="id_submit">Commit</button>
+</form>
+
+</script>
+<script id="merge-message-template" type="text/html">
+  Merged [[hash]] into [[branch]]
+
+[[message]]
+
+</script>
+<script id="commit-merge-error-template" type="text/html">
+  
+
+
+
+  We had trouble merging your changes. We stored them on the <strong>[[branch]]</strong> branch, so feel free to
+  <a href="/[[owner]]/[[slug]]/full-commit/[[hash]]/[[path]]?at=[[encodedBranch]]">view them</a> or
+  <a href="#" class="create-pull-request-link">create a pull request</a>.
+
+
+</script>
+
+
+
+<div data-modules="components/mentions/index">
+  <script id="mention-result" type="text/html">
+  
+<img class="avatar avatar24" src="[[avatar_url]]">
+[[#display_name]]
+  <span class="display-name">[[&display_name]]</span> <small class="username">[[&username]]</small>
+[[/display_name]]
+[[^display_name]]
+  <span class="username">[[&username]]</span>
+[[/display_name]]
+[[#is_teammate]][[^is_team]]
+  <span class="aui-lozenge aui-lozenge-complete aui-lozenge-subtle">teammate</span>
+[[/is_team]][[/is_teammate]]
+
+</script>
+  <script id="mention-call-to-action" type="text/html">
+  
+[[^query]]
+<li class="bb-typeahead-item">Begin typing to search for a user</li>
+[[/query]]
+[[#query]]
+<li class="bb-typeahead-item">Continue typing to search for a user</li>
+[[/query]]
+
+</script>
+  <script id="mention-no-results" type="text/html">
+  
+[[^searching]]
+<li class="bb-typeahead-item">Found no matching users for <em>[[query]]</em>.</li>
+[[/searching]]
+[[#searching]]
+<li class="bb-typeahead-item bb-typeahead-searching">Searching for <em>[[query]]</em>.</li>
+[[/searching]]
+
+</script>
+  
+</div>
+
+
+  
+
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-2.newrelic.com","a2cef8c3d3","1841284","Z11RZxdWW0cEVkYLDV4XdUYLVEFdClsdAAtEWkZQDlJBGgRFQhFMQl1DXFcZQ10AQkFYBFlUVlEXWEJHAA==",0,263,new Date().getTime(),"","","","",""]);</script></body>
+</html>

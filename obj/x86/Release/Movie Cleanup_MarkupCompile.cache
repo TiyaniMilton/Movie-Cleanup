@@ -1,0 +1,20 @@
+﻿Movie Cleanup
+
+
+winexe
+C#
+.cs
+L:\Movie Cleanup\Movie Cleanup\obj\x86\Release\
+Movie_Cleanup
+none
+false
+TRACE
+L:\Movie Cleanup\Movie Cleanup\App.xaml
+12-371839072
+1-1408486315
+123437905993
+19-210883447
+Controls\AlbumControl.xaml;Controls\AlbumViewControl.xaml;Controls\ArtistAlbumViewControl.xaml;Controls\ArtistViewControl.xaml;Controls\PlaylistControl.xaml;Controls\SidePanelTab.xaml;Controls\UsbDeviceControl.xaml;MainWindow.xaml;Resources\Styles.xaml;Styles\SliderStyle.xaml;Styles\ListBoxStyle.xaml;Styles\ScrollBar.xaml;
+
+True
+

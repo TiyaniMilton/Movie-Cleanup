@@ -1,0 +1,49 @@
+﻿<ListView Grid.Column="1" Name="lstvwLibraryView" SelectionChanged="lstvwLibraryView_SelectionChanged" MouseDoubleClick="lstvwLibraryView_MouseDoubleClick" BorderThickness="0" BorderBrush="{x:Null}"> <!--ItemsSource="{Binding Path=MusicLibrary}">-->
+                        <!--<ListView.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Image Height="150" Width="150"
+                       Source="{Binding Artist}" />
+                                    </DataTemplate>
+                                </GroupStyle.HeaderTemplate>
+                            </GroupStyle>
+                        </ListView.GroupStyle>-->
+                        <ListView.View >
+                        <GridView>
+                                <GridViewColumn>
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Height="100" Width="100"
+                       Source="{Binding AlbumArt}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Height="20" Width="20"
+                       Source="{Binding PlayImageButton}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Artist" Width="100" DisplayMemberBinding="{Binding Artist}"/>
+                            <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding Title}"/>
+                            <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Album}"/>
+                                <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Length}"/>
+                                <GridViewColumn Header="Genre" Width="100" DisplayMemberBinding="{Binding Genre}"/>
+                            <GridViewColumn Header="Year" Width="100" DisplayMemberBinding="{Binding Year}"/>
+                            <GridViewColumn Header="Comment" Width="100" DisplayMemberBinding="{Binding Comment}"/>
+                        </GridView>
+                    </ListView.View>
+                        <ListView.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontWeight="Bold" FontSize="14" Text="{Binding Artist}"/>
+                                    </DataTemplate>
+                                </GroupStyle.HeaderTemplate>
+                            </GroupStyle>
+                        </ListView.GroupStyle>
+                    </ListView>
+                
